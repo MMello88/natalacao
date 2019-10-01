@@ -1,21 +1,15 @@
-			  <?php if(isset($main_submenu)) : ?>
-			  <!-- .page-title-bar -->
-              <header class="page-title-bar">
-                <!-- page title stuff goes here -->
-                <h1 class="page-title"> 
-                <?= $main_submenu->submenu->submenu ?>
-                </h1>
-              </header><!-- /.page-title-bar -->
-			  <?php endif; ?>
-			  
-              <?php if(isset($main_submenu->submenu->output)) : ?>
-                <div style='padding: 20px'>
-                  <?= $main_submenu->submenu->output->output ?>
-                </div>
-              <?php endif; ?>		  
-			  
-              <?php if(isset($output)) : ?>
-              <div style="padding: 20px">
-                <?php echo $output; ?>
-              </div>
-              <?php endif; ?>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+    </main>

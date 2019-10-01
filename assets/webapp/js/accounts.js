@@ -89,7 +89,7 @@ class Acconts {
 				console.log(data);
 				this.respJson = new ResponseJson(data);
 				if (this.respJson.code == '1' && this.respJson.message == 'true')
-					window.location = base_url + "projects/select";
+					window.location = base_url + "admin/";
 			},
 			error: function(data) {
 				console.log(data);
@@ -99,7 +99,7 @@ class Acconts {
 	
 	redirectAccount(){
 		if (this.respJson.code == '1' && this.respJson.message == 'true')
-			window.location = base_url + "projects/select";
+			window.location = base_url + "admin/";
 	}
 
 	validate(form, funct, redirect = false, time = 0 ){
@@ -133,10 +133,3 @@ class Acconts {
 }
 
 let acc = new Acconts();
-
-//acc.registerAccount('MATHEUS','matheus@matheus.com', '12345678', '12345678');
-/*acc.registerAccount('matheus','matheus', '123', '123');
-acc.registerAccount('matheus','matheus@matheus.com', '123', '123');
-acc.registerAccount('matheus','matheus@matheus.com', '123', '123');*/
-
-//acc.validateAccount('s','');

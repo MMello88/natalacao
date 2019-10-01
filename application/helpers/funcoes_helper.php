@@ -18,3 +18,7 @@ function base_url_webapp($uri = '', $protocol = NULL) {
 
 	return $CI->config->base_url($uri, $protocol);
 }
+
+function nome_projeto(){
+  return "Natal em Ação";
+}
