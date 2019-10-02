@@ -29,7 +29,7 @@ class MY_Controller extends CI_Controller {
 		}
 				
 		if($onlyLogged){
-			if(!$this->logged) redirect();
+			if(!$this->logged) redirect("accounts/login");
 		}
 	}
 

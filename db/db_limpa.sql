@@ -99,6 +99,22 @@ CREATE TABLE `natalacao`.`tbl_pagina_valor`(
   CONSTRAINT `fk_pg_pg_valor` FOREIGN KEY (`id_pagina`) REFERENCES `natalacao`.`tbl_pagina`(`id_pagina`)
 ) ENGINE=INNODB CHARSET=utf8;
 
+CREATE TABLE `natalacao`.`tbl_projeto`(  
+  `id_projeto` INT NOT NULL AUTO_INCREMENT,
+  `projeto` VARCHAR(150) NOT NULL,
+  `ativo` ENUM('Ativo','Desativado') NOT NULL,
+  PRIMARY KEY (`id_projeto`)
+) ENGINE=INNODB CHARSET=utf8;
+
+CREATE TABLE `natalacao`.`tbl_projeto_menu`(  
+  `id_projeto_menu` INT NOT NULL AUTO_INCREMENT,
+  `id_projeto` INT NOT NULL,
+  `menu` VARCHAR(100) NOT NULL,
+  `url` VARCHAR(100) NOT NULL,
+  `ativo` ENUM('Ativo','Desativado'),
+  PRIMARY KEY (`id_projeto_menu`),
+  CONSTRAINT `fk_pro_pro_menu` FOREIGN KEY (`id_projeto`) REFERENCES `natalacao`.`tbl_projeto`(`id_projeto`)
+);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

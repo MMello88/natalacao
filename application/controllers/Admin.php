@@ -5,6 +5,8 @@ class Admin extends MY_Controller {
 	
 	public function __construct(){
 		parent::__construct(TRUE);
+
+		//$this->data['menus'] = $this->projetos->getMenu();
 	}
 
 	public function index($slug = "")
@@ -67,6 +69,14 @@ class Admin extends MY_Controller {
     
     $this->data = array_merge($this->data, (array)$output);
 	  $this->template->showLogged('dashboard/main/cadastro', $this->data);	
+	}
+
+	public function projeto(){
+
+	}
+
+	public function menu(){
+
 	}
 
 }

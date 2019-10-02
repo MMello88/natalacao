@@ -270,14 +270,16 @@ class Accounts extends MY_Controller {
 	
 	public function login()
 	{
+		if ($this->logged) redirect("admin");
 		$this->template->addScriptWebapp('js/accounts.js');
-		$this->template->show('accounts/accounts/auth-signin-v1', $this->data);
+		$this->template->show('pagina/accounts/account', $this->data);
 	}
 
 	public function logout()
 	{
 		$this->logout_account();
-		$this->template->show('accounts/logout/auth-signin-v2', $this->data);
+		$this->template->addScriptWebapp('js/accounts.js');
+		$this->template->show('pagina/accounts/logout', $this->data);
 	}
 
 	public function forgot($hash = '')
@@ -297,34 +299,18 @@ class Accounts extends MY_Controller {
 		}
 		
 		$this->data['hash'] = $hash;
-		$this->load->view('accounts/forgot/auth-recovery-password', $this->data);
+		$this->template->addScriptWebapp('js/accounts.js');
+		$this->load->view('pagina/accounts/forgot', $this->data);
 	}
 
 	public function register()
 	{
-		$this->load->view('accounts/register/auth-signup', $this->data);
-		
+		$this->template->addScriptWebapp('js/accounts.js');
+		$this->load->view('pagina/accounts/register', $this->data);
 	}
 
 	public function register_ativado()
 	{
-		$this->load->view('accounts/includes/header');
-		$this->load->view('accounts/register/register_ativado');
-		$this->load->view('accounts/includes/footer', $this->data);
-	}
-
-	public function continuar()
-	{
-		if ($this->logged){
-			if ($this->account->cadastro_completo == "0"){
-				$this->template->addScriptTemplate("bs-stepper.min.js","vendor/bs-stepper/js/",true, true);
-				$this->template->addScriptTemplate("toastr.min.js","vendor/toastr/",true, true);
-				$this->template->addScriptWebapp("toastr-steps.js");
-				$this->template->addScriptWebapp("steps-cadastro.js");
-				$this->template->addScriptWebapp("accounts.js");
-				$this->template->addScriptWebapp("steps-email-valid.js");
-				$this->template->showLoggedNoMenu('accounts/register/continuar', $this->data);
-			} else redirect();
-		} else redirect();
+		$this->load->view('pagina/accounts/register_ativado');
 	}
 }
