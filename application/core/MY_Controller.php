@@ -58,4 +58,26 @@ class MY_Controller extends CI_Controller {
 		}
 		return false;
 	}
+
+    protected function _getDbData() {
+        $db = [];
+        include(APPPATH . 'config/database.php');
+        return [
+            'adapter' => [
+                'driver' => 'Pdo_Mysql',
+                'host'     => $db['default']['hostname'],
+                'database' => $db['default']['database'],
+                'username' => $db['default']['username'],
+                'password' => $db['default']['password'],
+                'charset' => 'utf8'
+            ]
+        ];
+    }
+	
+	protected function _getGroceryCrudEnterprise($bootstrap = true, $jquery = true) {
+        $db = $this->_getDbData();
+        $config = include(APPPATH . 'config/gcrud-enteprise.php');
+        $groceryCrud = new GroceryCrud($config, $db);
+        return $groceryCrud;
+    }
 }

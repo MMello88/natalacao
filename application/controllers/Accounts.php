@@ -270,6 +270,7 @@ class Accounts extends MY_Controller {
 	
 	public function login()
 	{
+		$this->template->addScriptWebapp('js/accounts.js');
 		$this->template->show('accounts/accounts/auth-signin-v1', $this->data);
 	}
 

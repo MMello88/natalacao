@@ -29,5 +29,29 @@ class Admin extends MY_Controller {
 	    $this->template->showLogged('restrita/templates', $this->data);
 	}
 	
+	public function pageIndex(){
+
+		$crud = $this->_getGroceryCrudEnterprise();
+        $crud->setTable('tbl_pagina_principal');
+        $crud->setSubject('Pagina Principal', '');
+
+		$crud->columns(['parametro','valor']);
+        $crud->displayAs(['parametro' => 'Parametro','valor' => 'Valor']);
+        $crud->uniqueFields(['parametro']);
+        $crud->requiredFields(['parametro','valor']);
+        $crud->setTexteditor(['valor']);
+        $crud->unsetJquery();
+        $output = $crud->render();
+        
+        if (isset($output->isJSONResponse) && $output->isJSONResponse) {
+            header('Content-Type: application/json; charset=utf-8');
+            echo $output->output;
+            exit;
+        }
+        
+
+        $this->data = array_merge($this->data, (array)$output);
+	    $this->template->showLogged('dashboard/main/page_index', $this->data);	
+	}
 
 }

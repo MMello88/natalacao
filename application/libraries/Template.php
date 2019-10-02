@@ -69,7 +69,7 @@ class Template {
 		
 	}
 
-	public function addScriptWebapp($js, $dir = ""){
-		array_push($this->data['arrJSExt'], base_url_webapp_js("$dir$js"));
+	public function addScriptWebapp($js){
+		array_push($this->data['arrJSExt'], base_url_webapp("$js"));
 	}
 }
