@@ -10,15 +10,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url("admin/pageIndex") ?>">
+            <a class="nav-link" href="<?= base_url("admin/paginas") ?>">
               <span data-feather="file"></span>
-              Pagina Principal
+              Paginas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= base_url("admin/configuracao") ?>">
               <span data-feather="shopping-cart"></span>
-              Products
+              Configuração da Pagina
             </a>
           </li>
           <li class="nav-item">

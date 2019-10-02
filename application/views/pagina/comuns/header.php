@@ -31,6 +31,7 @@
     </script><!-- End SEO tag -->
     <script>
       var base_url = "<?= base_url(); ?>";
+      var slug = "<?= isset($slug) ? $slug : '' ?>";
     </script>
 
     <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url("assets/images/apple-touch-icon.png") ?>">
@@ -42,10 +43,3 @@
     
   </head>
   <body>
-
-    <a href="<?= base_url("accounts/login") ?>">login</a>
-    <script src="<?= base_url_webapp("js/componentes/bootstrap/jquery.min.js") ?>"></script>
-    <script src="<?= base_url_webapp("js/componentes/bootstrap/bootstrap.bundle.min.js") ?>"></script>
-    <script src="<?= base_url_webapp("js/componentes/bootstrap/bootstrap.min.js") ?>"></script>
-  </body>
-</html>

@@ -16,42 +16,57 @@ class Admin extends MY_Controller {
 		}
 		$this->template->showLogged('dashboard/main/layout-main', $this->data);
 	}
-
-	public function templates(){ 
-	    $this->template->addCssTemplate("photoswipe.css", "photoswipe/");
-	    $this->template->addCssTemplate("default-skin.css", "photoswipe/photoswipe-skin/");
-	    $this->template->addCssTemplate("plyr.css", "plyr/");
-		$this->template->addScriptTemplateComponente("photoswipe.js","vendor/photoswipe/");
-	    $this->template->addScriptTemplateComponente("photoswipe-ui-default.min.js","vendor/photoswipe/");
-	    $this->template->addScriptTemplateComponente("plyr.js","vendor/plyr/");
-	    $this->template->addScriptTemplate("photoswipe-demo.js","javascript/pages/");
-	    $this->template->addScriptWebapp('template.js');
-	    $this->template->showLogged('restrita/templates', $this->data);
-	}
 	
-	public function pageIndex(){
-
+	public function paginas(){
+    $this->data['menu_active'] = 'pages';
+    $this->data['titulo'] = 'Pagina';
+    
 		$crud = $this->_getGroceryCrudEnterprise();
-        $crud->setTable('tbl_pagina_principal');
-        $crud->setSubject('Pagina Principal', '');
+    $crud->setTable('tbl_pagina');
+    $crud->setSubject('Paginas', '');
 
-		$crud->columns(['parametro','valor']);
-        $crud->displayAs(['parametro' => 'Parametro','valor' => 'Valor']);
-        $crud->uniqueFields(['parametro']);
-        $crud->requiredFields(['parametro','valor']);
-        $crud->setTexteditor(['valor']);
-        $crud->unsetJquery();
-        $output = $crud->render();
-        
-        if (isset($output->isJSONResponse) && $output->isJSONResponse) {
-            header('Content-Type: application/json; charset=utf-8');
-            echo $output->output;
-            exit;
-        }
-        
+		$crud->columns(['pagina', 'url', 'principal']);
+    $crud->displayAs(['pagina' => 'Nome da Pagina','url' => 'Nome do Link', 'principal' => 'Pagina Principal']);
+    $crud->uniqueFields(['pagina']);
+    $crud->requiredFields(['pagina','url','principal']);
+    $crud->unsetJquery();
+    $output = $crud->render();
+    
+    if (isset($output->isJSONResponse) && $output->isJSONResponse) {
+        header('Content-Type: application/json; charset=utf-8');
+        echo $output->output;
+        exit;
+    }
+    
+    $this->data = array_merge($this->data, (array)$output);
+	  $this->template->showLogged('dashboard/main/cadastro', $this->data);	
+	}
+  
+  public function configuracao(){
+    $this->data['menu_active'] = 'campos';
+    $this->data['titulo'] = 'Configuração da Pagina';
+    
+    
+		$crud = $this->_getGroceryCrudEnterprise();
+    $crud->setTable('tbl_pagina_valor');
+    $crud->setSubject('Configuração da Pagina', '');
 
-        $this->data = array_merge($this->data, (array)$output);
-	    $this->template->showLogged('dashboard/main/page_index', $this->data);	
+		$crud->columns(['id_pagina','campo','valor','ativo']);
+    $crud->displayAs(['id_pagina' => 'Pagina','campo' => 'Parametro','valor' => 'Valor','ativo' => 'Ativo']);
+    $crud->uniqueFields(['campo']);
+    $crud->requiredFields(['id_pagina','campo','valor']);
+    $crud->setRelation('id_pagina','tbl_pagina','pagina');
+    $crud->unsetJquery();
+    $output = $crud->render();
+    
+    if (isset($output->isJSONResponse) && $output->isJSONResponse) {
+        header('Content-Type: application/json; charset=utf-8');
+        echo $output->output;
+        exit;
+    }
+    
+    $this->data = array_merge($this->data, (array)$output);
+	  $this->template->showLogged('dashboard/main/cadastro', $this->data);	
 	}
 
 }

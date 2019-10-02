@@ -15,9 +15,9 @@ class Accounts_model extends CI_Model {
     		'senha' => md5($this->input->post('senha')),
     		'Ativo' => 'Ativo',
     		'dt_cadastro' => date('Y-m-d H:i:s'),
-            'cadastro_completo' => '0',
-            'ver_cad_usuario' => '1',
-            'imagem_perfil' => 'unknown-profile.jpg'
+        'cadastro_completo' => '0',
+        'ver_cad_usuario' => '1',
+        'imagem_perfil' => 'unknown-profile.jpg'
     	];
 
     	if ($this->db->insert('usuario', $data)) {

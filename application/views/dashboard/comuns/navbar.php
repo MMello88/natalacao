@@ -5,7 +5,7 @@
       </a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="<?= base_url("logout/") ?>">Sair</a>
+          <a class="nav-link" href="<?= base_url("accounts/logout") ?>">Sair</a>
         </li>
       </ul>
     </nav>
