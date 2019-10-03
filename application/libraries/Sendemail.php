@@ -11,7 +11,7 @@ class Sendemail {
     }
 
 	public function enviarEmailRecuperarSenha($nome, $to_email, $hash){
-    	$link = base_url("Accounts/forgot/$hash");
+    	$link = base_url("accounts/forgot/$hash");
     	$html = 
 		"<!DOCTYPE html>
 		<html lang=\"pt-br\">
@@ -40,7 +40,7 @@ class Sendemail {
     }
 
     public function enviarHashEmailCadastroInicial($nome, $to_email, $hash){
-    	$link = base_url("Accounts/accounts");
+    	$link = base_url("accounts/accounts");
     	$html = 
 		"<!DOCTYPE html>
 		<html lang=\"pt-br\">

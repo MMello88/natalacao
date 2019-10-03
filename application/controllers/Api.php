@@ -12,4 +12,8 @@ class Api extends MY_Controller {
 	{
     $this->api->getPaginaCampos($slug);
 	}
+  
+  public function getProjetos(){
+    $this->api->getProjetos();
+  }
 }

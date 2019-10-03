@@ -89,7 +89,7 @@ class Acconts {
 				console.log(data);
 				this.respJson = new ResponseJson(data);
 				if (this.respJson.code == '1' && this.respJson.message == 'true')
-					window.location = base_url + "admin/";
+					window.location = base_url + "admin/projetos";
 			},
 			error: function(data) {
 				console.log(data);
@@ -99,7 +99,7 @@ class Acconts {
 	
 	redirectAccount(){
 		if (this.respJson.code == '1' && this.respJson.message == 'true')
-			window.location = base_url + "admin/";
+			window.location = base_url + "admin/projetos";
 	}
 
 	validate(form, funct, redirect = false, time = 0 ){
