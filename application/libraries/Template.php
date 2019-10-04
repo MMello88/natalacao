@@ -13,6 +13,7 @@ class Template {
   {
     $this->CI =& get_instance();
     $this->arrJSExt = [];
+    $this->data['arrCss'] = [];
   }
 
   public function show($view, $vars = array(), $return = FALSE)
@@ -53,4 +54,8 @@ class Template {
 	public function addScriptWebapp($js){
 		array_push($this->arrJSExt, base_url_webapp("$js"));
 	}
+
+  public function addCssWebapp($css){
+    array_push($this->data['arrCss'], base_url_webapp("$css"));
+  }
 }

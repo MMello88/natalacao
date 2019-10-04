@@ -300,17 +300,18 @@ class Accounts extends MY_Controller {
 		
 		$this->data['hash'] = $hash;
 		$this->template->addScriptWebapp('js/accounts.js');
-		$this->load->view('pagina/accounts/forgot', $this->data);
+		$this->template->show('pagina/accounts/forgot', $this->data);
 	}
 
 	public function register()
 	{
 		$this->template->addScriptWebapp('js/accounts.js');
-		$this->load->view('pagina/accounts/register', $this->data);
+		$this->template->show('pagina/accounts/register', $this->data);
 	}
 
 	public function register_ativado()
 	{
-		$this->load->view('pagina/accounts/register_ativado');
+		$this->template->addScriptWebapp('js/accounts.js');
+		$this->template->show('pagina/accounts/register_ativado', $this->data);
 	}
 }

@@ -5,8 +5,15 @@ class Welcome extends MY_Controller {
 
 	public function index($slug = 'principal')
 	{
-    $this->data['slug'] = $slug;
+    	$this->data['slug'] = $slug;
+
+		if (method_exists($this, $slug))
+			$this->$slug();
+	}
+
+	private function principal(){
 		$this->template->addScriptWebapp('js/pagina_principal.js');
+		$this->template->addCssWebapp('css/style/main-page.css');
 		$this->template->show('pagina/main_page', $this->data);
 	}
 }

@@ -1,0 +1,5 @@
+.jumbotron{
+    background: linear-gradient(to bottom,rgba(0,0,0,.3) 0,rgba(0,0,0,.7) 75%,#161616 100%),url("http://localhost/natalacao/assets/uploads/files/crianca.jpg") no-repeat top center;
+    /*background-size: 100% 100%;*/
+    padding: 20rem 4rem 9rem 4rem;
+}

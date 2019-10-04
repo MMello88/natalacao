@@ -40,6 +40,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url_webapp("css/master.css") ?>">
-    
+    <?php if(isset($arrCss)) foreach($arrCss as $css): ?>
+    <link rel="stylesheet" href="<?= $css ?>">
+    <?php endforeach; ?>
+
   </head>
   <body>
