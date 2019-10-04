@@ -37,7 +37,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url("assets/images/apple-touch-icon.png") ?>">
     <link rel="shortcut icon" href="<?= base_url("assets/images/favicon.ico") ?>">
     <meta name="theme-color" content="#3063A0">
-
+  
+    <link href="<?= base_url_webapp("css/components/fontawesome-free/all.min.css") ?>" rel="stylesheet">
+    <link href="<?= base_url_webapp("css/components/simple-line-icons/css/simple-line-icons.css") ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url_webapp("css/master.css") ?>">
     <?php if(isset($arrCss)) foreach($arrCss as $css): ?>
@@ -46,3 +48,27 @@
 
   </head>
   <body>
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="<?= base_url() ?>">
+        <img src="<?= base_url("assets/images/apple-touch-icon.png") ?>" width="30" height="30" class="d-inline-block align-top" alt="">
+        <?= nome_projeto() ?>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Doação</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+	</nav>

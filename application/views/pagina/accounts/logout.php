@@ -1,9 +1,3 @@
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="<?= base_url() ?>">
-        <img src="<?= base_url("assets/images/apple-touch-icon.png") ?>" width="30" height="30" class="d-inline-block align-top" alt="">
-        <?= nome_projeto() ?>
-      </a>
-    </nav>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <strong>Oloco, meu!</strong> Logout foi realizado com sucesso!
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">

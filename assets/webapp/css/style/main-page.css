@@ -1,5 +1,60 @@
-.jumbotron{
-    background: linear-gradient(to bottom,rgba(0,0,0,.3) 0,rgba(0,0,0,.7) 75%,#161616 100%),url("http://localhost/natalacao/assets/uploads/files/crianca.jpg") no-repeat top center;
-    /*background-size: 100% 100%;*/
-    padding: 20rem 4rem 9rem 4rem;
+header.masthead {
+  position: relative;
+  background-color: #343a40;
+  background: url("../../../uploads/files/crianca.jpg") no-repeat top center;
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  background-color: #212529;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+header.masthead h1 {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  header.masthead {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
+
+
+
+.features-icons {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.features-icons .features-icons-item {
+  max-width: 20rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+  height: 7rem;
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+  font-size: 4.5rem;
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+  font-size: 5rem;
+}
+
+footer.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
