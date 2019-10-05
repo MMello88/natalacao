@@ -1,7 +1,8 @@
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-        <div id="dashboard-app" class="container">
+    <main role="main" class="container-fluid">
+      
+        <div id="dashboard-app" class="mt-4">
           <h2 id="titulo_tela" class="border-bottom"></h2>
         </div>
-      </div>
+      
     </main>
+

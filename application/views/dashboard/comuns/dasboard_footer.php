@@ -1,3 +1,5 @@
+    </div>
+  </div>
 
     <?php if(isset($arrJS)) foreach ($arrJS as $js) { ?>
         <script src="<?= $js ?>" ></script>
@@ -7,6 +9,13 @@
       <script src="<?php echo $file; ?>"></script>
     <?php endforeach; ?>
     <?php endif; ?>
+
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
 
   </body>
 </html>

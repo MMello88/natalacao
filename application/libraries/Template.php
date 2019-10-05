@@ -29,13 +29,11 @@ class Template {
   {
     $this->data = array_merge($this->data, $vars);
     $this->setJS();
-    $this->CI->load->view('dashboard/comuns/header', $this->data);
-    $this->CI->load->view('dashboard/comuns/navbar', $this->data);
-    $this->CI->load->view('dashboard/comuns/menu', $this->data);
+    $this->CI->load->view('dashboard/comuns/dasboard_header', $this->data);
     $this->CI->load->view($view, $this->data, $return);
     if($this->view !== null)
       $this->CI->load->view($this->view, $this->data, $return);
-    $this->CI->load->view('dashboard/comuns/footer', $this->data);
+    $this->CI->load->view('dashboard/comuns/dasboard_footer', $this->data);
     $this->view = null;
   }
 

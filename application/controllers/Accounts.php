@@ -272,13 +272,15 @@ class Accounts extends MY_Controller {
 	{
 		if ($this->logged) redirect("admin");
 		$this->template->addScriptWebapp('js/accounts.js');
-		$this->template->show('pagina/accounts/account', $this->data);
+		$this->template->addCssWebapp('css/style/login.css');
+		$this->template->show('pagina/accounts/login', $this->data);
 	}
 
 	public function logout()
 	{
 		$this->logout_account();
 		$this->template->addScriptWebapp('js/accounts.js');
+		$this->template->addCssWebapp('css/style/login.css');
 		$this->template->show('pagina/accounts/logout', $this->data);
 	}
 
@@ -300,6 +302,7 @@ class Accounts extends MY_Controller {
 		
 		$this->data['hash'] = $hash;
 		$this->template->addScriptWebapp('js/accounts.js');
+		$this->template->addCssWebapp('css/style/login.css');
 		$this->template->show('pagina/accounts/forgot', $this->data);
 	}
 
