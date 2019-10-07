@@ -49,9 +49,9 @@
   </head>
   <body>
 
-	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-secondary py-3">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light py-3">
     <div class="container">
-      <a class="navbar-brand text-white" href="<?= base_url() ?>">
+      <a class="navbar-brand" href="<?= base_url() ?>">
         <img src="<?= base_url("assets/images/apple-touch-icon.png") ?>" width="30" height="30" class="d-inline-block align-top mr-2" alt="">
         <?= nome_projeto() ?>
       </a>
@@ -61,13 +61,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Doação</a>
+            <a class="nav-link" href="#doacao">Doação</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Sobre</a>
+            <a class="nav-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
           </li>
         </ul>
       </div>

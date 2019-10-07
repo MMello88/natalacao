@@ -7,11 +7,11 @@ class Projetos {
 	
 	load(){
     this.projetos()
-    document.getElementById("titulo_tela").innerHTML = 'Selecione o seu Projeto';
+    document.getElementById("titulo_tela").innerHTML = 'Selecionar o projeto';
 	}
   
   projetos(){
-    $("#wrapper").toggleClass("toggled");
+    //$("#wrapper").toggleClass("toggled");
     var request = new XMLHttpRequest()
     request.open('GET', base_url + 'api/getProjetos')
     request.send()
@@ -21,11 +21,11 @@ class Projetos {
         console.log(request.responseText)
         var dataJson = JSON.parse(request.responseText)
         let row = document.createElement('div')
-        row.className = 'row mt-3'
+        row.className = 'row my-3'
         
         dataJson.forEach(function(item, index, dataJson){
           let card = document.createElement('div')
-          card.className = 'card text-center sombra'
+          card.className = 'card text-center sombra mt-3'
 
           let cardHeader = document.createElement('div')
           cardHeader.className = 'card-header text-white bg-info'
