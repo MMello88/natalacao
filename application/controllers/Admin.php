@@ -125,6 +125,7 @@ class Admin extends MY_Controller {
       redirect("admin/");
     } else {
       $this->template->addScriptWebapp('js/projetos.js');
+      $this->template->addCssWebapp('css/style/projetos.css');
       $this->template->showLogged('dashboard/main/layout-main', $this->data);
     }
   }

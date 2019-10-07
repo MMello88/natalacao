@@ -24,20 +24,23 @@
     <?php endforeach; ?>
     <?php endif; ?>
     <link rel="stylesheet" href="<?= base_url_webapp("css/master.css") ?>">
+    <?php if(isset($arrCss)) foreach($arrCss as $css): ?>
+    <link rel="stylesheet" href="<?= $css ?>">
+    <?php endforeach; ?>
   </head>
   <body>
 
   <div class="d-flex" id="wrapper">
 
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading text-light">
         <?php if(isset($projeto)) : ?>
             <h5 class="ml-2"><?= $projeto->projeto ?></h5>
           <?php endif; ?>
       </div>
       <div class="list-group list-group-flush">
         <?php if(isset($menus)) foreach($menus as $menu): ?>
-        <a href="<?= base_url($menu->url) ?>" class="list-group-item list-group-item-action bg-light"><?= $menu->menu ?></a>
+        <a href="<?= base_url($menu->url) ?>" class="list-group-item list-group-item-action bg-dark text-light"><?= $menu->menu ?></a>
         <?php endforeach; ?>
       </div>
     </div>

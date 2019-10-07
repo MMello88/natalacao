@@ -11,6 +11,7 @@ class Projetos {
 	}
   
   projetos(){
+    $("#wrapper").toggleClass("toggled");
     var request = new XMLHttpRequest()
     request.open('GET', base_url + 'api/getProjetos')
     request.send()
@@ -24,30 +25,30 @@ class Projetos {
         
         dataJson.forEach(function(item, index, dataJson){
           let card = document.createElement('div')
-          card.className = 'card text-center'
+          card.className = 'card text-center sombra'
 
           let cardHeader = document.createElement('div')
-          cardHeader.className = 'card-header'
+          cardHeader.className = 'card-header text-white bg-info'
           cardHeader.innerHTML = item.projeto
 
           let cardBody = document.createElement('div')
           cardBody.className = 'card-body'
           
           let linkSelect = document.createElement('a')
-          linkSelect.className = 'btn btn-info'
+          linkSelect.className = 'btn btn-success'
           linkSelect.innerHTML = 'Selecionar'
           linkSelect.setAttribute('href', base_url + 'admin/projetos/'+item.id_projeto)
           cardBody.appendChild(linkSelect)
           
           let cardFooter = document.createElement('div')
-          cardFooter.className = 'card-footer text-muted'
+          cardFooter.className = 'card-footer text-muted bg-info'
           
           let col = document.createElement('div')
           col.className = 'col-sm-6 col-md-6 col-lg-4 mt-2'
           
           card.appendChild(cardHeader)
           card.appendChild(cardBody)
-          card.appendChild(cardFooter)
+          //card.appendChild(cardFooter)
           
           col.appendChild(card)
 
