@@ -138,6 +138,9 @@ CREATE TABLE `tbl_pagina` (
   PRIMARY KEY (`id_pagina`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
+ALTER TABLE `natalacao`.`tbl_pagina`   
+  ADD COLUMN `configuracao` ENUM('Não','Sim') DEFAULT 'Não'   NOT NULL AFTER `principal`;
+
 /*Data for the table `tbl_pagina` */
 
 insert  into `tbl_pagina`(`id_pagina`,`pagina`,`url`,`principal`,`ativo`) values (1,'principal','principal','Sim','Ativo'),(2,'sobre','sobre','Não','Ativo'),(3,'contato','contato','Não','Ativo');

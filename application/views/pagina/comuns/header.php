@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- End Required meta tags -->
-    <!-- Begin SEO tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title> Venha contruir seu próprio website | Matilab </title>
-    <meta property="og:title" content="Sign In">
-    <meta name="author" content="Matheus de Mello">
+    <meta name="author" content="<?= is_set($head, 'author') ?>">
+    <meta name="description" content="<?= is_set($head, 'description') ?>">
+    <meta name="keywords" content="<?= is_set($head, 'keywords') ?>">
+    <meta property="og:title" content="<?= is_set($head, 'title') ?>">
     <meta property="og:locale" content="pt_BR">
-    <meta name="description" content="Gerencie seu tempo, seus projetos e sua vida.">
-    <meta property="og:description" content="Gerencie seu tempo, seus projetos e sua vida.">
-    <link rel="canonical" href="http://matilab.com.br">
-    <meta property="og:url" content="http://matilab.com.br">
-    <meta property="og:site_name" content="Matilab - Seu Gerenciamento seu tempo!">
-    <script type="application/ld+json">
-      {
-        "name": "Matilab - Seu Gerenciamento seu tempo!",
-        "description": "Gerencie seu tempo, seus projetos e sua vida.",
-        "author":
-        {
-          "@type": "Matheus",
-          "name": "Matheus de Mello"
-        },
-        "@type": "WebSite",
-        "url": "",
-        "headline": "Sign In",
-        "@context": "http://schema.org"
-      }
-    </script><!-- End SEO tag -->
+    <meta property="og:description" content="<?= is_set($head, 'description') ?>">
+    <meta property="og:url" content="<?= is_set($head, 'url') ?>">
+    <meta property="og:site_name" content="<?= is_set($head, 'site_name') ?>">
+    <meta property="og:image" content="<?= base_url('assets/images/' . is_set($head, 'image')) ?>">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="600"> 
+    <meta property="og:type" content="<?= is_set($head, 'type') ?>">
     <script>
       var base_url = "<?= base_url(); ?>";
       var slug = "<?= isset($slug) ? $slug : '' ?>";
     </script>
 
+    <link rel="canonical" href="http://matilab.com.br">
     <link rel="apple-touch-icon" sizes="144x144" href="<?= base_url("assets/images/apple-touch-icon.png") ?>">
     <link rel="shortcut icon" href="<?= base_url("assets/images/favicon.ico") ?>">
-    <meta name="theme-color" content="#3063A0">
-  
     <link href="<?= base_url_webapp("css/components/fontawesome-free/all.min.css") ?>" rel="stylesheet">
     <link href="<?= base_url_webapp("css/components/simple-line-icons/css/simple-line-icons.css") ?>" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet">

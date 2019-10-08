@@ -27,10 +27,10 @@ class Admin extends MY_Controller {
     $crud->setTable('tbl_pagina');
     $crud->setSubject('Paginas', '');
 
-		$crud->columns(['pagina', 'url', 'principal','ativo']);
-    $crud->displayAs(['pagina' => 'Nome da Pagina','url' => 'Nome do Link', 'principal' => 'Pagina Principal','ativo' => 'Ativo']);
+		$crud->columns(['pagina', 'url', 'principal', 'configuracao','ativo']);
+    $crud->displayAs(['pagina' => 'Nome da Pagina','url' => 'Nome do Link', 'principal' => 'Pagina Principal', 'configuracao' => 'Configuração', 'ativo' => 'Ativo']);
     $crud->uniqueFields(['pagina']);
-    $crud->requiredFields(['pagina','url','principal','ativo']);
+    $crud->requiredFields(['pagina','url','principal','configuracao','ativo']);
     $crud->unsetJquery();
     $output = $crud->render();
     

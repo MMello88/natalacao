@@ -22,3 +22,7 @@ function base_url_webapp($uri = '', $protocol = NULL) {
 function nome_projeto(){
   return "Natal em Ação";
 }
+
+function is_set($array, $param){
+  return isset($array[$param]) ? $array[$param] : "";
+}
