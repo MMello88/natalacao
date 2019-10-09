@@ -30,24 +30,44 @@
   </head>
   <body>
 
-  <div class="d-flex" id="wrapper">
+  <div class="d-flex bg-light" id="wrapper">
 
-    <div class="bg-dark border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading text-light">
+    <div class="bg-white border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading text-muted">
         <?php if(isset($projeto)) : ?>
             <h5 class="ml-2"><?= $projeto->projeto ?></h5>
           <?php endif; ?>
       </div>
       <div class="list-group list-group-flush">
         <?php if(isset($menus)) foreach($menus as $menu): ?>
-        <a href="<?= base_url($menu->url) ?>" class="list-group-item list-group-item-action bg-dark text-light"><?= $menu->menu ?></a>
+        <a href="#<?= $menu->menu ?>" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action text-muted">
+          <div class="d-flex w-100 justify-content-end align-items-center">
+            <span class="fa fa-dashboard fa-fw mr-3"></span> 
+            <span class="menu-collapsed"><?= $menu->menu ?></span>
+            <span class="submenu-icon ml-auto"></span>
+          </div>
+        </a>
+        <!-- Submenu content -->
+        <div id="<?= $menu->menu ?>" class="collapse sidebar-submenu">
+            <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+                <span class="menu-collapsed">Charts</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+                <span class="menu-collapsed">Reports</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
+                <span class="menu-collapsed">Tables</span>
+            </a>
+        </div>
         <?php endforeach; ?>
       </div>
+
+
     </div>
 
     <div id="page-content-wrapper">
       
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <button class="btn btn-link" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

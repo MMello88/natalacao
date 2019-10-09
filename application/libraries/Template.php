@@ -20,7 +20,9 @@ class Template {
   {
     $this->setJS();
     $this->CI->load->model('Configuracao_model', 'cfg');
-    $this->data['head'] = $this->CI->cfg->getPaginaConfig('head');
+    $this->data['head'] = $this->CI->cfg->getPaginaConfig('cabecalho');
+    $this->data['foot'] = $this->CI->cfg->getPaginaConfig('rodape');
+    $this->data['pages'] = $this->CI->cfg->getPaginas();
     $this->data = array_merge($this->data, $vars);
     $this->CI->load->view('pagina/comuns/header', $this->data);
     $this->CI->load->view($view, $this->data, $return);

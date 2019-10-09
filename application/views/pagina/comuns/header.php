@@ -48,18 +48,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-          </li>
+          <?php foreach($pages as $page): ?>
           <li class="nav-item">
-            <a class="nav-link" href="#doacao">Doação</a>
+            <a class="nav-link" href="<?= base_url($page->url) ?>"><?= $page->pagina ?></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contato">Contato</a>
-          </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>

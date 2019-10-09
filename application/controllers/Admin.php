@@ -27,10 +27,11 @@ class Admin extends MY_Controller {
     $crud->setTable('tbl_pagina');
     $crud->setSubject('Paginas', '');
 
-		$crud->columns(['pagina', 'url', 'principal', 'configuracao','ativo']);
-    $crud->displayAs(['pagina' => 'Nome da Pagina','url' => 'Nome do Link', 'principal' => 'Pagina Principal', 'configuracao' => 'Configuração', 'ativo' => 'Ativo']);
+		$crud->columns(['pagina', 'principal', 'configuracao','ativo', 'ordem']);
+    $crud->displayAs(['pagina' => 'Nome da Pagina','url' => 'Nome do Link', 'principal' => 'Pagina Principal', 'configuracao' => 'Configuração', 'ativo' => 'Ativo', 'ordem' => 'Ordem']);
     $crud->uniqueFields(['pagina']);
-    $crud->requiredFields(['pagina','url','principal','configuracao','ativo']);
+    $crud->requiredFields(['pagina','url','principal','configuracao','ativo', 'ordem']);
+    $crud->defaultOrdering('ordem', 'asc');
     $crud->unsetJquery();
     $output = $crud->render();
     
@@ -44,7 +45,7 @@ class Admin extends MY_Controller {
 	  $this->template->showLogged('dashboard/main/cadastro', $this->data);	
 	}
   
-  public function configuracao(){
+  public function configuracao($where = ''){
     $this->data['titulo'] = 'Configuração da Pagina';
     
     
@@ -54,9 +55,11 @@ class Admin extends MY_Controller {
 
 		$crud->columns(['id_pagina','campo','valor','ativo']);
     $crud->displayAs(['id_pagina' => 'Pagina','campo' => 'Parametro','valor' => 'Valor','ativo' => 'Ativo']);
-    $crud->uniqueFields(['campo']);
     $crud->requiredFields(['id_pagina','campo','valor']);
     $crud->setRelation('id_pagina','tbl_pagina','pagina');
+
+    if(!empty($where))
+      $crud->where(['id_pagina' => $where]);
     $crud->unsetJquery();
     $output = $crud->render();
     

@@ -18,4 +18,8 @@ class Configuracao_model extends CI_Model {
     }
     return $index;
   }
+  
+  public function getPaginas() {
+    return $this->db->order_by('ordem')->get_where('tbl_pagina', ['ativo' => 'Ativo', 'configuracao' => 'Não'])->result();
+  }
 }
