@@ -5,8 +5,8 @@ class Welcome extends MY_Controller {
 
 	public function index($slug = 'principal')
 	{
-    $this->data['head'] = $this->cfg->getPaginaConfig('head');
-    $this->data['slug'] = $slug;
+    
+    	$this->data['slug'] = $slug;
 
 		if (method_exists($this, $slug))
 			$this->$slug();
