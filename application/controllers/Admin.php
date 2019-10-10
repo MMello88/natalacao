@@ -3,13 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends MY_Controller {
 	
+    public $projeto;
+
 	public function __construct(){
-		parent::__construct(TRUE);
-    if($this->session->userdata('projeto') !== null){
-      $projeto = $this->session->userdata('projeto');
-      $this->data['projeto'] = $projeto;
-      $this->data['menus'  ] = $this->projetos->getProjetoMenus($projeto->id_projeto);
-    }
+	   parent::__construct(TRUE);
+        if($this->session->userdata('projeto') !== null){
+            $this->projeto = $this->session->userdata('projeto');
+            $this->data['projeto'] = $this->projeto;
+            $this->data['menus'  ] = $this->projetos->getProjetoMenus($this->projeto->id_projeto);
+        }
 	}
 
 	public function index($slug = "")
@@ -104,11 +106,12 @@ class Admin extends MY_Controller {
     $crud->setTable('tbl_projeto_menu');
     $crud->setSubject('Menus', '');
 
-		$crud->columns(['id_projeto','menu','url','ativo','ordem']);
-    $crud->displayAs(['id_projeto' => 'Projeto','menu' => 'Nome do Menu','url' => 'Link','ativo' => 'Ativo', 'ordem' => 'Ordem']);
-    $crud->uniqueFields(['url']);
-    $crud->requiredFields(['id_projeto','menu','url','ativo','ordem']);
+		$crud->columns(['id_projeto','menu','url','id_projeto_pai','ativo','ordem']);
+    $crud->displayAs(['id_projeto' => 'Projeto','menu' => 'Nome do Menu','url' => 'Link','ativo' => 'Ativo', 'ordem' => 'Ordem', 'id_projeto_pai' => 'Menu Pai']);
+    $crud->requiredFields(['id_projeto','menu','ativo','ordem']);
     $crud->setRelation('id_projeto','tbl_projeto','projeto');
+    $crud->setRelation('id_projeto_pai','tbl_projeto_menu','menu');
+    $crud->defaultOrdering(['id_projeto' => 'asc', 'ordem' => 'asc']);
     $crud->unsetJquery();
     $output = $crud->render();
     
@@ -118,7 +121,7 @@ class Admin extends MY_Controller {
         exit;
     }
     
-    $this->data = array_merge($this->data, (array)$output);
+      $this->data = array_merge($this->data, (array)$output);
 	  $this->template->showLogged('dashboard/main/cadastro', $this->data);	
 	}
 

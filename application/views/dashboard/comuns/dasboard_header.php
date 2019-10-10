@@ -39,26 +39,22 @@
           <?php endif; ?>
       </div>
       <div class="list-group list-group-flush">
-        <?php if(isset($menus)) foreach($menus as $menu): ?>
-        <a href="#<?= $menu->menu ?>" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action text-muted">
+        <?php if(isset($menus)) foreach($menus as $objmenu): ?>
+        <a href="#<?= $objmenu->url ?>" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action text-muted">
           <div class="d-flex w-100 justify-content-end align-items-center">
             <span class="fa fa-dashboard fa-fw mr-3"></span> 
-            <span class="menu-collapsed"><?= $menu->menu ?></span>
+            <span class="menu-collapsed"><?= $objmenu->menu ?></span>
             <span class="submenu-icon ml-auto"></span>
           </div>
         </a>
-        <!-- Submenu content -->
-        <div id="<?= $menu->menu ?>" class="collapse sidebar-submenu">
-            <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
-                <span class="menu-collapsed">Charts</span>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
-                <span class="menu-collapsed">Reports</span>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-light text-dark">
-                <span class="menu-collapsed">Tables</span>
-            </a>
-        </div>
+          <?php if(isset($objmenu->submenu)) foreach($objmenu->submenu as $submenu): ?>
+          <!-- Submenu content -->
+          <div id="<?= $objmenu->url ?>" class="collapse sidebar-submenu">
+              <a href="<?= base_url($submenu->url) ?>" class="list-group-item list-group-item-action bg-light text-dark">
+                  <span class="menu-collapsed"><?= $submenu->menu ?></span>
+              </a>
+          </div>
+          <?php endforeach; ?>
         <?php endforeach; ?>
       </div>
 

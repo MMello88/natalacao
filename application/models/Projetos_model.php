@@ -13,6 +13,10 @@ class Projetos_model extends CI_Model {
     }
     
     public function getProjetoMenus($id_projeto){
-      return $this->db->order_by('ordem')->get_where('projeto_menu', ['id_projeto' => $id_projeto, 'ativo' => 'Ativo'])->result();
+      $menus = $this->db->order_by('ordem')->get_where('projeto_menu', ['id_projeto' => $id_projeto, 'ativo' => 'Ativo', 'id_projeto_pai' => null])->result();
+      foreach ($menus as $key => $menu) {
+        $menus[$key]->submenu = $this->db->order_by('ordem')->get_where('projeto_menu', ['id_projeto_pai' => $menu->id_projeto_menu, 'ativo' => 'Ativo'])->result();
+      }
+      return $menus;
     }
 }
