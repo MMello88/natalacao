@@ -162,7 +162,6 @@ class Admin extends MY_Controller {
     $crud->setRelation('id_entidade','tbl_entidade','nome_entidade');
     
     $crud->callbackAfterInsert(function ($stateParameters) {
-      print_r($stateParameters);
       $this->db->insert('tbl_movimento', ['id_entidade' => $stateParameters->data['id_entidade'], 'id_beneficiado' => $stateParameters->insertId, 'dt_periodo' => date("Y") . '-12-25']);
       return $stateParameters;
     });

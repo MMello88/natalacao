@@ -273,7 +273,7 @@ class Accounts extends MY_Controller {
 		if ($this->logged) redirect("admin");
 		$this->template->addScriptWebapp('js/accounts.js');
 		$this->template->addCssWebapp('css/style/login.css');
-		$this->template->show('pagina/accounts/login', $this->data);
+		$this->template->login('pagina/accounts/login', $this->data);
 	}
 
 	public function logout()
@@ -281,7 +281,7 @@ class Accounts extends MY_Controller {
 		$this->logout_account();
 		$this->template->addScriptWebapp('js/accounts.js');
 		$this->template->addCssWebapp('css/style/login.css');
-		$this->template->show('pagina/accounts/logout', $this->data);
+		$this->template->login('pagina/accounts/logout', $this->data);
 	}
 
 	public function forgot($hash = '')
@@ -303,7 +303,7 @@ class Accounts extends MY_Controller {
 		$this->data['hash'] = $hash;
 		$this->template->addScriptWebapp('js/accounts.js');
 		$this->template->addCssWebapp('css/style/login.css');
-		$this->template->show('pagina/accounts/forgot', $this->data);
+		$this->template->login('pagina/accounts/forgot', $this->data);
 	}
 
 	public function register()

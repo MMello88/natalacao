@@ -1,5 +1,6 @@
+<?php if (isset($foot)) : ?>
   <!-- Footer -->
-  <footer class="footer bg-light" id="contato">
+  <footer class="footer mt-auto bg-light" id="contato">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
@@ -55,7 +56,7 @@
       </div>
     </div>
   </footer>
-
+<?php endif; ?>
     <?php if(isset($arrJS)) foreach ($arrJS as $js) { ?>
       <script src="<?= $js ?>" ></script>
     <?php } ?>

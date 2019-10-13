@@ -10,11 +10,25 @@ class Welcome extends MY_Controller {
 
 		if (method_exists($this, $slug))
 			$this->$slug();
+		else
+			show_404();
 	}
 
 	private function home(){
 		$this->template->addScriptWebapp('js/pagina_principal.js');
 		$this->template->addCssWebapp('css/style/main-page.css');
+		$this->data['home'] = $this->projetos->getPaginaCampos('#home');
+		$this->data['doacao'] = $this->projetos->getPaginaCampos('#doacao');
+		$this->data['sobre'] = $this->projetos->getPaginaCampos('#sobre');
+
 		$this->template->show('pagina/main_page', $this->data);
+	}
+
+	private function doar(){
+		$this->template->addCssWebapp('css/style/main-page.css');
+		$this->data['doar'] = $this->projetos->getPaginaCampos('doar');
+		$this->data['movimentos'] = $this->projetos->getMovimentos();
+		
+		$this->template->show('pagina/doar', $this->data);
 	}
 }

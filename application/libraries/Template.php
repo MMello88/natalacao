@@ -16,6 +16,18 @@ class Template {
     $this->data['arrCss'] = [];
   }
 
+  public function login($view, $vars = array(), $return = FALSE)
+  {
+    $this->setJS();
+    $this->CI->load->model('Configuracao_model', 'cfg');
+    $this->data['head'] = $this->CI->cfg->getPaginaConfig('cabecalho');
+    $this->data['pages'] = $this->CI->cfg->getPaginas();
+    $this->data = array_merge($this->data, $vars);
+    $this->CI->load->view('pagina/comuns/header', $this->data);
+    $this->CI->load->view($view, $this->data, $return);
+    $this->CI->load->view('pagina/comuns/footer', $this->data);
+  }
+
   public function show($view, $vars = array(), $return = FALSE)
   {
     $this->setJS();

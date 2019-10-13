@@ -35,7 +35,7 @@
     <?php endforeach; ?>
 
   </head>
-  <body>
+  <body class="bg-light">
 
 	<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light py-3">
     <div class="container">
