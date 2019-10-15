@@ -1,10 +1,9 @@
 /*
-SQLyog Ultimate v11.11 (32 bit)
-MySQL - 5.5.5-10.1.9-MariaDB-log : Database - natalacao
+SQLyog Ultimate v11.11 (64 bit)
+MySQL - 5.5.5-10.1.10-MariaDB : Database - natalacao
 *********************************************************************
-*/
+*/
 
-DROP DATABASE `natalacao`;
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
@@ -35,11 +34,11 @@ CREATE TABLE `tbl_beneficiado` (
   PRIMARY KEY (`id_beneficiado`),
   KEY `fk_entidade_benef` (`id_entidade`),
   CONSTRAINT `fk_entidade_benef` FOREIGN KEY (`id_entidade`) REFERENCES `tbl_entidade` (`id_entidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 /*Data for the table `tbl_beneficiado` */
 
-insert  into `tbl_beneficiado`(`id_beneficiado`,`id_entidade`,`nome_benef`,`nr_rg_cpf`,`endereco`,`numero`,`telefone`,`complemento`,`ativo`,`caracteristicas`) values (1,1,'Sergio','350171592','av. portugal','1470','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(2,1,'Matheus de Mello','787887878787','Av. Nove de Julho, 125','12','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(3,1,'Matheus de Mello','78788','Av. Nove de Julho, 125','12','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(4,1,'Matheus de Mello','787883333','Av. Nove de Julho, 125','12','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(5,1,'Matheus de Mello','78788333333','Av. Nove de Julho, 125','12','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(6,1,'Matheus de Mello','78788333333333','Av. Nove de Julho, 125','12','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38');
+insert  into `tbl_beneficiado`(`id_beneficiado`,`id_entidade`,`nome_benef`,`nr_rg_cpf`,`endereco`,`numero`,`telefone`,`complemento`,`ativo`,`caracteristicas`) values (6,1,'Matheus de Mello','78788333333333','Av. Nove de Julho, 125','12','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(7,1,'Jeff Machine Young','1234567','4092 Furth Circle','400','2125557413',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38'),(8,1,'Sergio','98777777','Rua Alvares Cabral','123','16991838523',NULL,'Ativo','Camiseta G, Calçado 42, Calça 38');
 
 /*Table structure for table `tbl_ci_sessions` */
 
@@ -56,7 +55,7 @@ CREATE TABLE `tbl_ci_sessions` (
 
 /*Data for the table `tbl_ci_sessions` */
 
-insert  into `tbl_ci_sessions`(`id`,`ip_address`,`timestamp`,`data`) values ('heq84pfmu7brsuhjes19vpm6qbiskahe','::1',1570814104,'__ci_last_regenerate|i:1570814104;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('mac9rn2rjn06hhmpfsospb8tucrdn271','::1',1570816864,'__ci_last_regenerate|i:1570814103;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('pikjtacuiamrlai2i1p66h25b5uop7mg','::1',1570813016,'__ci_last_regenerate|i:1570810211;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}');
+insert  into `tbl_ci_sessions`(`id`,`ip_address`,`timestamp`,`data`) values ('5s0upt73qqmq3vb51elsnmn8qjjof5ui','::1',1571104879,'__ci_last_regenerate|i:1571104879;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('7ke2h1vq24p7mtpps84oq8buo5v6bjt5','::1',1571104985,'__ci_last_regenerate|i:1571104879;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('b0re0r8fd00b5sch007ejhdnfnmjun2k','::1',1570918666,'__ci_last_regenerate|i:1570918666;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"1\";s:7:\"projeto\";s:18:\"Configuração Web\";s:5:\"ativo\";s:5:\"Ativo\";}'),('heq84pfmu7brsuhjes19vpm6qbiskahe','::1',1570814104,'__ci_last_regenerate|i:1570814104;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('i7u7hnpci48725nvr05jlq9vs9q9nh3b','::1',1570929645,'__ci_last_regenerate|i:1570929330;'),('ktjs528vc21v4gqu8ibgf6t6bing44m6','::1',1570905720,'__ci_last_regenerate|i:1570905720;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('mac9rn2rjn06hhmpfsospb8tucrdn271','::1',1570816864,'__ci_last_regenerate|i:1570814103;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('ntnsembuhqie6jo0t9e4bq2hs5hm2vc5','::1',1570926800,'__ci_last_regenerate|i:1570926800;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('pikjtacuiamrlai2i1p66h25b5uop7mg','::1',1570813016,'__ci_last_regenerate|i:1570810211;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('t344gel8qplfmut6vf18miugtrba9ato','::1',1570914701,'__ci_last_regenerate|i:1570914701;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"1\";s:7:\"projeto\";s:18:\"Configuração Web\";s:5:\"ativo\";s:5:\"Ativo\";}');
 
 /*Table structure for table `tbl_doador` */
 
@@ -108,11 +107,11 @@ CREATE TABLE `tbl_movimento` (
   KEY `fk_mov_benef` (`id_beneficiado`),
   CONSTRAINT `fk_mov_benef` FOREIGN KEY (`id_beneficiado`) REFERENCES `tbl_beneficiado` (`id_beneficiado`),
   CONSTRAINT `fk_mov_entidade` FOREIGN KEY (`id_entidade`) REFERENCES `tbl_entidade` (`id_entidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `tbl_movimento` */
 
-insert  into `tbl_movimento`(`id_movimento`,`id_entidade`,`id_beneficiado`,`dt_periodo`) values (1,1,6,'2019-12-25');
+insert  into `tbl_movimento`(`id_movimento`,`id_entidade`,`id_beneficiado`,`dt_periodo`) values (1,1,6,'2019-12-25'),(2,1,7,'2019-12-25'),(3,1,8,'2019-12-25');
 
 /*Table structure for table `tbl_movimento_item` */
 
@@ -149,7 +148,7 @@ CREATE TABLE `tbl_pagina` (
 
 /*Data for the table `tbl_pagina` */
 
-insert  into `tbl_pagina`(`id_pagina`,`pagina`,`url`,`principal`,`configuracao`,`ativo`,`ordem`) values (1,'Home','#home','Sim','Não','Ativo',1),(2,'Sobre','#sobre','Não','Não','Ativo',4),(3,'Contato','#contato','Não','Não','Ativo',5),(4,'cabeçalho','cabecalho','Não','Sim','Ativo',98),(5,'rodape','rodape','Não','Sim','Ativo',99),(6,'Doação','#doacao','Não','Não','Ativo',2),(7,'Fazer Doação','doar','Não','Não','Ativo',3);
+insert  into `tbl_pagina`(`id_pagina`,`pagina`,`url`,`principal`,`configuracao`,`ativo`,`ordem`) values (1,'Home','#home','Sim','Não','Ativo',1),(2,'Sobre','#sobre','Não','Não','Ativo',4),(3,'Contato','#contato','Não','Não','Ativo',5),(4,'cabeçalho','cabecalho','Não','Sim','Ativo',98),(5,'rodape','rodape','Não','Sim','Ativo',99),(6,'Doação','#doacao','Não','Não','Ativo',2),(7,'Fazer Doação','doacao/doar','Não','Não','Ativo',3);
 
 /*Table structure for table `tbl_pagina_valor` */
 
@@ -164,11 +163,11 @@ CREATE TABLE `tbl_pagina_valor` (
   PRIMARY KEY (`id_pagina_valor`),
   KEY `fk_pg_pg_valor` (`id_pagina`),
   CONSTRAINT `fk_pg_pg_valor` FOREIGN KEY (`id_pagina`) REFERENCES `tbl_pagina` (`id_pagina`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 /*Data for the table `tbl_pagina_valor` */
 
-insert  into `tbl_pagina_valor`(`id_pagina_valor`,`id_pagina`,`campo`,`valor`,`ativo`) values (2,2,'titulo','Sobre nós','Ativo'),(3,4,'author','Matheus de Mello','Ativo'),(4,4,'description','Natal em Açao Ribeirão Preto. Relizada pela Paroquia.','Ativo'),(5,4,'keywords','Natal; Açao; Ribeirão Preto; Doaçao;','Ativo'),(6,4,'title','Natal em Açao RP','Ativo'),(7,4,'url','www.natalemacaorp.com.br','Ativo'),(8,4,'site_name','Natal em Ação RP','Ativo'),(9,4,'image','criancas.jpg','Ativo'),(10,4,'type','website','Ativo'),(11,5,'facebook','https://www.facebook.com/Matheus.Melllo','Ativo'),(12,5,'instagram','https://www.instagram.com/mmello088/','Ativo'),(13,5,'twitter','https://twitter.com/m0rena0','Ativo'),(14,5,'endereco','Av. Nove de Julho','Ativo'),(15,5,'email','matheus.gnu@gmail.com','Ativo'),(16,5,'telefone','(016) 99184-8523','Ativo'),(17,5,'horario','08:00 à 18:00','Ativo'),(18,2,'item_imagem','sobre1.jpg','Ativo'),(19,2,'item_titulo','Margaret E.','Ativo'),(20,2,'item_descricao','\"This is fantastic! Thanks so much guys!\"','Ativo'),(21,2,'item_imagem1','sobre2.jpg','Ativo'),(22,2,'item_titulo1','Fred S.','Ativo'),(23,2,'item_descricao1','\"Bootstrap is amazing. I\'ve been using it to create lots of super nice landing pages.\"','Ativo'),(24,2,'item_imagem2','sobre3.jpg','Ativo'),(25,2,'item_titulo2','Sarah W.','Ativo'),(26,2,'item_descricao2','\"Thanks so much for making these free resources available to us!\"','Ativo');
+insert  into `tbl_pagina_valor`(`id_pagina_valor`,`id_pagina`,`campo`,`valor`,`ativo`) values (2,2,'titulo','Sobre nós','Ativo'),(3,4,'author','Matheus de Mello','Ativo'),(4,4,'description','Natal em Açao Ribeirão Preto. Relizada pela Paroquia.','Ativo'),(5,4,'keywords','Natal; Açao; Ribeirão Preto; Doaçao;','Ativo'),(6,4,'title','Natal em Açao RP','Ativo'),(7,4,'url','www.natalemacaorp.com.br','Ativo'),(8,4,'site_name','Natal em Ação RP','Ativo'),(9,4,'image','criancas.jpg','Ativo'),(10,4,'type','website','Ativo'),(11,5,'facebook','https://www.facebook.com/Matheus.Melllo','Ativo'),(12,5,'instagram','https://www.instagram.com/mmello088/','Ativo'),(13,5,'twitter','https://twitter.com/m0rena0','Ativo'),(14,5,'endereco','Av. Nove de Julho','Ativo'),(15,5,'email','matheus.gnu@gmail.com','Ativo'),(16,5,'telefone','(016) 99184-8523','Ativo'),(17,5,'horario','08:00 à 18:00','Ativo'),(18,2,'item_imagem','sobre1.jpg','Ativo'),(19,2,'item_titulo','Margaret E.','Ativo'),(20,2,'item_descricao','\"This is fantastic! Thanks so much guys!\"','Ativo'),(21,2,'item_imagem1','sobre2.jpg','Ativo'),(22,2,'item_titulo1','Fred S.','Ativo'),(23,2,'item_descricao1','\"Bootstrap is amazing. I\'ve been using it to create lots of super nice landing pages.\"','Ativo'),(24,2,'item_imagem2','sobre3.jpg','Ativo'),(25,2,'item_titulo2','Sarah W.','Ativo'),(26,2,'item_descricao2','\"Thanks so much for making these free resources available to us!\"','Ativo'),(27,1,'titulo','Contribui com nossa paróquia','Ativo'),(28,1,'descricao','Sua doação pode mudar vidas. Doe e acompanhe nossos trabalhos estamos trazendo esperanças a nossa juventude.','Ativo'),(29,6,'titulo','Como realizar doação','Ativo'),(30,6,'doacao_icon','icon-screen-desktop','Ativo'),(31,6,'doacao_titulo','Fully Responsive','Ativo'),(32,6,'doacao_descricao','This theme will look great on any device, no matter the size!','Ativo'),(33,6,'doacao_icon1','icon-layers','Ativo'),(34,6,'doacao_titulo1','Bootstrap 4 Ready','Ativo'),(35,6,'doacao_descricao1','Featuring the latest build of the new Bootstrap 4 framework!','Ativo'),(36,6,'doacao_icon2','icon-badge','Ativo'),(37,6,'doacao_titulo2','Easy to Use','Ativo'),(38,6,'doacao_descricao2','Ready to use with your own content, or customize the source files!','Ativo');
 
 /*Table structure for table `tbl_projeto` */
 
