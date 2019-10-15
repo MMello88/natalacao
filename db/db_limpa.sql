@@ -3,7 +3,7 @@ SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.5-10.1.10-MariaDB : Database - natalacao
 *********************************************************************
 */
-
+DROP DATABASE `natalacao`;
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
