@@ -28,7 +28,7 @@ class Welcome extends MY_Controller {
 		$this->template->addCssWebapp('css/style/main-page.css');
 		$this->data['doar'] = $this->projetos->getPaginaCampos('doar');
 		$this->data['movimentos'] = $this->projetos->getMovimentos();
-		
+		$this->data['tipos'] = $this->projetos->getTipoDoacao();
 		$this->template->show('pagina/doar', $this->data);
 	}
 }

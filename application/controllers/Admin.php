@@ -126,10 +126,11 @@ class Admin extends MY_Controller {
     $crud->setTable('tbl_movimento_item');
     $crud->setSubject($this->data['titulo'], '');
     
-    $crud->columns(['tipo_doacao','id_doador']);
-    $crud->displayAs(['tipo_doacao' => 'Tipo de Doação','id_doador' => 'Doador']);
+    $crud->columns(['id_tipo_doacao','id_doador']);
+    $crud->displayAs(['id_tipo_doacao' => 'Tipo de Doação','id_doador' => 'Doador']);
     
     $crud->setRelation('id_doador','tbl_doador','nome_doador');
+    $crud->setRelation('id_tipo_doacao','tbl_tipo_doacao','tipo');
     
     $this->output($crud);
   }
@@ -149,7 +150,6 @@ class Admin extends MY_Controller {
   
   public function beneficiado(){
     $this->data['titulo'] = 'Beneficiado';
-    
     
 		$crud = $this->_getGroceryCrudEnterprise();
     $crud->setTable('tbl_beneficiado');
@@ -183,6 +183,20 @@ class Admin extends MY_Controller {
     $this->output($crud);
   }
   
+  public function tipo(){
+    $this->data['titulo'] = 'Tipos de Doações';
+    
+    $crud = $this->_getGroceryCrudEnterprise();
+    $crud->setTable('tbl_tipo_doacao');
+    $crud->setSubject('Tipo de Doação', '');
+    
+    $crud->columns(['tipo', 'descricao']);
+    $crud->displayAs(['tipo' => 'Tipo','descricao' => 'Descrição']);
+    $crud->uniqueFields(['tipo']);
+    
+    $this->output($crud);
+  }
+
   private function output($crud){
     $crud->unsetJquery();
     $output = $crud->render();

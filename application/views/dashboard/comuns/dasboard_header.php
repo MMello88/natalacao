@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- End Required meta tags -->
     <!-- Begin SEO tag -->
-    <title> Sign In | <?= nome_projeto() ?> </title>
+    <title> <?= $titulo ?> | <?= nome_projeto() ?> </title>
     <meta property="og:title" content="Sign In">
     <meta name="author" content="Matheus de Mello">
     <meta property="og:locale" content="pt_BR">

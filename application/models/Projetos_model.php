@@ -51,4 +51,8 @@ class Projetos_model extends CI_Model {
     }
     return $entidades;
   }
+
+  public function getTipoDoacao(){
+    return $this->db->get_where('tipo_doacao')->result();
+  }
 }

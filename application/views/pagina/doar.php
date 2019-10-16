@@ -1,6 +1,6 @@
 <?php foreach ($movimentos as $mov) : ?>
 <!-- Icons Grid -->
-  <section class="features-icons text-center p-5 m-5" id="doacao">
+  <section class="text-center mt-5 pt-5" id="doacao">
     <div class="container">
       <h2 class="mb-5"><?= $mov->nome_fantasia ?></h2>
       <div class="row">
@@ -13,37 +13,26 @@
 			<div class="card">
 			  <div class="card-header">
 			    <h5><?= $benef->benefeciado->nome_benef ?></h5>
+			    <smal><?= $benef->benefeciado->caracteristicas ?></smal>
 			  </div>
 			  <div class="card-body">
 			  	<div class="container">
 			  		<div class="row text-left">
+			  			<?php foreach ($tipos as $tipo): ?>
 					  	<div class="col-lg-4">
-					  		<p class="lead mb-0"> Presente </p>
-						  	<div class="custom-control custom-switch mb-auto">
-							  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-							  <label class="custom-control-label" for="customSwitch1">Doar?</label>
+					  		<p class="lead mb-0"> <?= $tipo->tipo ?> </p>
+					  		<p><smal> <?= $tipo->descricao ?> </smal></p>
+						  	<div class="custom-control custom-switch">
+							  <input type="checkbox" class="custom-control-input" id="<?= $tipo->tipo ?>">
+							  <label class="custom-control-label" for="<?= $tipo->tipo ?>">Doar?</label>
 							</div>
 						</div>
-					  	<div class="col-lg-4">
-					  		<p class="lead mb-0"> Cesta Basica </p>
-						  	<div class="custom-control custom-switch mb-auto">
-							  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-							  <label class="custom-control-label" for="customSwitch1">Doar?</label>
-							</div>
-						</div>
-					  	<div class="col-lg-4">
-					  		<p class="lead mb-0"> Cesta material Limpeza </p>
-						  	<div class="custom-control custom-switch mb-auto">
-							  <input type="checkbox" class="custom-control-input" id="customSwitch1">
-							  <label class="custom-control-label" for="customSwitch1">Doar?</label>
-							</div>
-						</div>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			  </div>
 			  <div class="card-footer">
-	         	<p class="lead mb-0">Caracteristicas:</p>
-	            <p class="lead mb-0"><?= $benef->benefeciado->caracteristicas ?></p>
+			  	<button class="btn btn-danger btn-sm" type="submit">Finalizar a Doaçao</button>
 			  </div>
 			</div>
 

@@ -3,7 +3,7 @@ SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.5-10.1.10-MariaDB : Database - natalacao
 *********************************************************************
 */
-DROP DATABASE `natalacao`;
+
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
@@ -55,7 +55,7 @@ CREATE TABLE `tbl_ci_sessions` (
 
 /*Data for the table `tbl_ci_sessions` */
 
-insert  into `tbl_ci_sessions`(`id`,`ip_address`,`timestamp`,`data`) values ('5s0upt73qqmq3vb51elsnmn8qjjof5ui','::1',1571104879,'__ci_last_regenerate|i:1571104879;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('7ke2h1vq24p7mtpps84oq8buo5v6bjt5','::1',1571104985,'__ci_last_regenerate|i:1571104879;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('b0re0r8fd00b5sch007ejhdnfnmjun2k','::1',1570918666,'__ci_last_regenerate|i:1570918666;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"1\";s:7:\"projeto\";s:18:\"Configuração Web\";s:5:\"ativo\";s:5:\"Ativo\";}'),('heq84pfmu7brsuhjes19vpm6qbiskahe','::1',1570814104,'__ci_last_regenerate|i:1570814104;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('i7u7hnpci48725nvr05jlq9vs9q9nh3b','::1',1570929645,'__ci_last_regenerate|i:1570929330;'),('ktjs528vc21v4gqu8ibgf6t6bing44m6','::1',1570905720,'__ci_last_regenerate|i:1570905720;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('mac9rn2rjn06hhmpfsospb8tucrdn271','::1',1570816864,'__ci_last_regenerate|i:1570814103;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('ntnsembuhqie6jo0t9e4bq2hs5hm2vc5','::1',1570926800,'__ci_last_regenerate|i:1570926800;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('pikjtacuiamrlai2i1p66h25b5uop7mg','::1',1570813016,'__ci_last_regenerate|i:1570810211;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('t344gel8qplfmut6vf18miugtrba9ato','::1',1570914701,'__ci_last_regenerate|i:1570914701;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"1\";s:7:\"projeto\";s:18:\"Configuração Web\";s:5:\"ativo\";s:5:\"Ativo\";}');
+insert  into `tbl_ci_sessions`(`id`,`ip_address`,`timestamp`,`data`) values ('5s0upt73qqmq3vb51elsnmn8qjjof5ui','::1',1571104879,'__ci_last_regenerate|i:1571104879;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('7ke2h1vq24p7mtpps84oq8buo5v6bjt5','::1',1571104985,'__ci_last_regenerate|i:1571104879;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('b0re0r8fd00b5sch007ejhdnfnmjun2k','::1',1570918666,'__ci_last_regenerate|i:1570918666;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"1\";s:7:\"projeto\";s:18:\"Configuração Web\";s:5:\"ativo\";s:5:\"Ativo\";}'),('heq84pfmu7brsuhjes19vpm6qbiskahe','::1',1570814104,'__ci_last_regenerate|i:1570814104;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('i7u7hnpci48725nvr05jlq9vs9q9nh3b','::1',1570929645,'__ci_last_regenerate|i:1570929330;'),('ktjs528vc21v4gqu8ibgf6t6bing44m6','::1',1570905720,'__ci_last_regenerate|i:1570905720;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('l3s3dgtdjk0kakmfil8jrefi6n6q400s','::1',1571182295,'__ci_last_regenerate|i:1571182295;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('mac9rn2rjn06hhmpfsospb8tucrdn271','::1',1570816864,'__ci_last_regenerate|i:1570814103;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('ntnsembuhqie6jo0t9e4bq2hs5hm2vc5','::1',1570926800,'__ci_last_regenerate|i:1570926800;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('pikjtacuiamrlai2i1p66h25b5uop7mg','::1',1570813016,'__ci_last_regenerate|i:1570810211;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"3\";s:7:\"projeto\";s:15:\"Natal em Ação\";s:5:\"ativo\";s:5:\"Ativo\";}'),('t344gel8qplfmut6vf18miugtrba9ato','::1',1570914701,'__ci_last_regenerate|i:1570914701;session_account|a:5:{s:5:\"email\";s:21:\"matheus.gnu@gmail.com\";s:4:\"nome\";s:16:\"Matheus de Mello\";s:16:\"CadastroCompleto\";s:1:\"1\";s:10:\"id_usuario\";s:1:\"8\";s:14:\"id_usuario_pai\";N;}projeto|O:8:\"stdClass\":3:{s:10:\"id_projeto\";s:1:\"1\";s:7:\"projeto\";s:18:\"Configuração Web\";s:5:\"ativo\";s:5:\"Ativo\";}');
 
 /*Table structure for table `tbl_doador` */
 
@@ -120,13 +120,15 @@ DROP TABLE IF EXISTS `tbl_movimento_item`;
 CREATE TABLE `tbl_movimento_item` (
   `id_movimento_item` int(11) NOT NULL AUTO_INCREMENT,
   `id_movimento` int(11) NOT NULL,
-  `tipo_doacao` enum('Presente','Cesta Basica','Cesta Material Limpesa') NOT NULL,
+  `id_tipo_doacao` int(11) NOT NULL,
   `id_doador` int(11) NOT NULL,
   PRIMARY KEY (`id_movimento_item`),
   KEY `fk_movitem_mov` (`id_movimento`),
   KEY `fk_movitem_doador` (`id_doador`),
+  KEY `fk_movitem_tipo_doador` (`id_tipo_doacao`),
   CONSTRAINT `fk_movitem_doador` FOREIGN KEY (`id_doador`) REFERENCES `tbl_doador` (`id_doador`),
-  CONSTRAINT `fk_movitem_mov` FOREIGN KEY (`id_movimento`) REFERENCES `tbl_movimento` (`id_movimento`)
+  CONSTRAINT `fk_movitem_mov` FOREIGN KEY (`id_movimento`) REFERENCES `tbl_movimento` (`id_movimento`),
+  CONSTRAINT `fk_movitem_tipo_doador` FOREIGN KEY (`id_tipo_doacao`) REFERENCES `tbl_tipo_doacao` (`id_tipo_doacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `tbl_movimento_item` */
@@ -201,11 +203,26 @@ CREATE TABLE `tbl_projeto_menu` (
   KEY `fk_pro_pro_menu_pai` (`id_projeto_pai`),
   CONSTRAINT `fk_pro_pro_menu` FOREIGN KEY (`id_projeto`) REFERENCES `tbl_projeto` (`id_projeto`),
   CONSTRAINT `fk_pro_pro_menu_pai` FOREIGN KEY (`id_projeto_pai`) REFERENCES `tbl_projeto_menu` (`id_projeto_menu`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 /*Data for the table `tbl_projeto_menu` */
 
-insert  into `tbl_projeto_menu`(`id_projeto_menu`,`id_projeto`,`menu`,`url`,`ativo`,`ordem`,`id_projeto_pai`) values (1,1,'Paginas','admin/paginas','Ativo',1,7),(2,1,'Objeto da Pagina','admin/configuracao','Ativo',2,7),(3,2,'Configurações do Projeto','proj','Ativo',0,NULL),(4,2,'Menu','admin/menu','Ativo',2,3),(6,2,'Projetos','admin/projeto','Ativo',1,3),(7,1,'Configurações de Paginas','cfg','Ativo',0,NULL),(8,3,'Movimentações','movimento','Ativo',0,NULL),(9,3,'Movimentação','admin/movimento','Ativo',1,8),(10,3,'Itens da Movimentação','admin/movItem','Ativo',2,8),(11,3,'Entidade','admin/entidade','Ativo',3,8),(12,3,'Befeneficiado','admin/beneficiado','Ativo',4,8),(13,3,'Doador','admin/doador','Ativo',5,8);
+insert  into `tbl_projeto_menu`(`id_projeto_menu`,`id_projeto`,`menu`,`url`,`ativo`,`ordem`,`id_projeto_pai`) values (1,1,'Paginas','admin/paginas','Ativo',1,7),(2,1,'Objeto da Pagina','admin/configuracao','Ativo',2,7),(3,2,'Configurações do Projeto','proj','Ativo',0,NULL),(4,2,'Menu','admin/menu','Ativo',2,3),(6,2,'Projetos','admin/projeto','Ativo',1,3),(7,1,'Configurações de Paginas','cfg','Ativo',0,NULL),(8,3,'Movimentações','movimento','Ativo',0,NULL),(9,3,'Movimentação','admin/movimento','Ativo',1,8),(10,3,'Itens da Movimentação','admin/movItem','Ativo',2,8),(11,3,'Entidade','admin/entidade','Ativo',3,8),(12,3,'Befeneficiado','admin/beneficiado','Ativo',4,8),(13,3,'Doador','admin/doador','Ativo',5,8),(14,3,'Tipo de Doação','admin/tipo','Ativo',6,8);
+
+/*Table structure for table `tbl_tipo_doacao` */
+
+DROP TABLE IF EXISTS `tbl_tipo_doacao`;
+
+CREATE TABLE `tbl_tipo_doacao` (
+  `id_tipo_doacao` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_tipo_doacao`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+/*Data for the table `tbl_tipo_doacao` */
+
+insert  into `tbl_tipo_doacao`(`id_tipo_doacao`,`tipo`,`descricao`) values (1,'Presente','Descrever os Presentes'),(2,'Cesta Básica','Itens da cestas basicas'),(3,'Cesta Material Limpeza','Itens da cestas básicas de limpeza');
 
 /*Table structure for table `tbl_usuario` */
 
