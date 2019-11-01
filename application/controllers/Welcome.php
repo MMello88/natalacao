@@ -25,10 +25,12 @@ class Welcome extends MY_Controller {
 	}
 
 	private function doar(){
+    $this->template->addScriptWebapp('js/doar.js');
 		$this->template->addCssWebapp('css/style/main-page.css');
 		$this->data['doar'] = $this->projetos->getPaginaCampos('doar');
 		$this->data['movimentos'] = $this->projetos->getMovimentos();
 		$this->data['tipos'] = $this->projetos->getTipoDoacao();
+    $this->data['countCart'] = count($this->projetos->getCarts());
 		$this->template->show('pagina/doar', $this->data);
 	}
 }

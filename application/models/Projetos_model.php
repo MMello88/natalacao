@@ -55,4 +55,90 @@ class Projetos_model extends CI_Model {
   public function getTipoDoacao(){
     return $this->db->get_where('tipo_doacao')->result();
   }
+  
+  /* funções da Tela de doação */
+  public function insertCart(){
+    $data = [
+      'id_sessions' => $_SESSION['__ci_last_regenerate'],
+      'id_movimento' => $this->input->post('id_movimento'),
+      'id_tipo_doacao' => $this->input->post('id_tipo_doacao')
+    ];
+    if (empty($this->db->get_where('cart',$data)->row())){
+      $this->db->insert('cart',$data);
+    
+      $count = count($this->getCarts());
+      $json = [
+        'status' => 'success',
+        'titulo' => 'Sucesso',
+        'menssage' => 'Inserido no carrinho',
+        'cart' => ['total' => $count]
+      ];
+      
+      echo json_encode($json);
+    } else {
+      
+      $count = count($this->getCarts());
+      $json = [
+        'status' => 'success',
+        'titulo' => 'Realizado',
+        'menssage' => 'Já existe item no carrinho',
+        'cart' => ['total' => $count]
+      ];
+      
+      echo json_encode($json);
+    }
+  }
+  
+  public function getCarts(){
+    return $this->db->get_where('cart',['id_sessions' => $_SESSION['__ci_last_regenerate']])->result();
+  }
+  
+  public function deleteCart(){
+    $data = [
+      'id_sessions' => $_SESSION['__ci_last_regenerate'],
+      'id_movimento' => $this->input->post('id_movimento'),
+      'id_tipo_doacao' => $this->input->post('id_tipo_doacao')
+    ];
+    $this->db->delete('cart',$data);
+    
+    $count = count($this->getCarts());
+    $json = [
+      'status' => 'success',
+      'titulo' => 'Sucesso',
+      'menssage' => 'Deletado do carrinho',
+      'cart' => ['total' => $count]
+    ];
+    
+    echo json_encode($json);
+  }
+  
+  public function finalizaDoacao($id_doador){
+    $carts = $this->getCart();
+    foreach($carts as $cart){
+      $data = [
+        'id_doador' => $id_doador,
+        'id_movimento' => $cart->id_movimento,
+        'id_tipo_doacao' => $cart->id_tipo_doacao
+      ];
+      
+      $this->db->insert('movimento_item',$data);
+    }
+    
+    $this->db->delete('cart',['id_sessions' => $_SESSION['__ci_last_regenerate']]);    
+  }
+  
+  public function getDoador($nr_rg_cpf){
+    return $this->db->get_where('doador',['nr_rg_cpf' => $nr_rg_cpf])->row();
+  }
+  
+  public function insertDoador(){
+    $data = [
+      'nome_doador' => $this->input->post('nome_doador'),
+      'nr_rg_cpf' => $this->input->post('nr_rg_cpf'),
+      'email' => $this->input->post('email'),
+      'telefone' => $this->input->post('telefone')
+    ];
+    
+    $this->db->insert('doador',$data);
+  }
 }
