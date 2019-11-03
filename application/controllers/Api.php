@@ -47,4 +47,12 @@ class Api extends MY_Controller {
       $this->projetos->deleteCart();
     }
   }
+
+  public function hasCarts(){
+    $this->projetos->hasCarts();
+  }
+
+  public function buscaRG($rg){
+    $this->projetos->getDoadorPorRG($rg); 
+  }
 }

@@ -17,7 +17,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="btn btn-success" href="#modalDoador" data-toggle="modal" data-target="#modalDoador">Fazinalizar Doação</a>
+        <a class="btn btn-success" id="btnFinalizaDoacao" href="#modalDoador" >Fazinalizar Doação</a>
       </li>
     </ul>
     
@@ -80,30 +80,44 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <?= form_open('Welcome/cadastrar_doardor') ?>
+      <?= form_open('api/createDoador', ['id' => 'createDoador']) ?>
       <div class="modal-body">
         <div class="form-group">
+          <input type="hidden" name="id_doador" id="id_doador">
           <label for="nr_rg_cpf" class="col-form-label">RG:</label>
-          <input type="text" class="form-control" name="nr_rg_cpf" id="nr_rg_cpf">
+          <input type="text" class="form-control" name="nr_rg_cpf" id="nr_rg_cpf" required>
         </div>
         <div class="form-group">
           <label for="nome_doador" class="col-form-label">Nome</label>
-          <input type="text" class="form-control" name="nome_doador" id="nome_doador">
+          <input type="text" class="form-control" name="nome_doador" id="nome_doador" required>
         </div>
         <div class="form-group">
           <label for="telefone" class="col-form-label">Telefone:</label>
-          <input type="text" class="form-control" name="telefone" id="telefone">
+          <input type="text" class="form-control" name="telefone" id="telefone" required>
         </div>
         <div class="form-group">
           <label for="email" class="col-form-label">E-mail:</label>
-          <input type="text" class="form-control" name="email" id="email">
+          <input type="text" class="form-control" name="email" id="email" required>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Doar</button>
+        <button type="submit" class="btn btn-primary">Doar</button>
       </div>
       <?= form_close() ?>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalMensagem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Carrinho vazio para realizar doação!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>

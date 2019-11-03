@@ -92,6 +92,18 @@ class Projetos_model extends CI_Model {
   public function getCarts(){
     return $this->db->get_where('cart',['id_sessions' => $_SESSION['__ci_last_regenerate']])->result();
   }
+
+  public function hasCarts(){
+    $count = count($this->getCarts());
+    $json = [
+      'status' => 'success',
+      'titulo' => 'Tem carrinho',
+      'menssage' => 'Total do carrinho',
+      'cart' => ['total' => $count]
+    ];
+    
+    echo json_encode($json);
+  }
   
   public function deleteCart(){
     $data = [
@@ -132,13 +144,39 @@ class Projetos_model extends CI_Model {
   }
   
   public function insertDoador(){
-    $data = [
-      'nome_doador' => $this->input->post('nome_doador'),
-      'nr_rg_cpf' => $this->input->post('nr_rg_cpf'),
-      'email' => $this->input->post('email'),
-      'telefone' => $this->input->post('telefone')
+    if($this->input->post('id_doador') === null){
+      $data = [
+        'nome_doador' => $this->input->post('nome_doador'),
+        'nr_rg_cpf' => $this->input->post('nr_rg_cpf'),
+        'email' => $this->input->post('email'),
+        'telefone' => $this->input->post('telefone')
+      ];
+      
+      $id = $this->db->insert('doador',$data);
+    } else {
+      $id = $this->input->post('id_doador');
+    }
+
+    $this->finalizaDoacao($id);
+
+    $json = [
+      'status' => 'success',
+      'titulo' => 'Sucesso',
+      'menssage' => 'Doação realizada com sucesso!',
     ];
     
-    $this->db->insert('doador',$data);
+    echo json_encode($json);
+  }
+
+  public function getDoadorPorRG($nr_rg_cpf){
+    $doador = $this->getDoador($nr_rg_cpf);
+    $json = [
+      'status' => 'success',
+      'titulo' => 'Sucesso',
+      'menssage' => 'Busca de doador realizada com sucesso!',
+      'doador' => $doador
+    ];
+    
+    echo json_encode($json);
   }
 }

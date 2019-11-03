@@ -1,8 +1,16 @@
-$('#modalDoador').on('show.bs.modal', function (event) {
-  //varifica se o carrinho tem item se tiver abre o formulário senão apresenta uma mensagem de aviso
-  var button = $(event.relatedTarget)
-  var recipient = button.data('myform') 
-  $('#recipient-name').val(recipient)
+$("#btnFinalizaDoacao").on('click', function(event){
+  $.ajax({
+    url: base_url + 'api/hasCarts',
+    success: function(data){
+      console.log(data);
+      if (data.cart.total > 0) {
+        $('#modalDoador').modal('show');
+      } else {
+        $('#modalMensagem').modal('show');
+      }
+    },
+    dataType: 'json'
+  });
 })
 
 $('#overCart').on('mouseover', function(e){
@@ -43,6 +51,35 @@ $(".chkBtn").click(function(event){
 });
 
 $("#nr_rg_cpf").blur(function(){
-  
-    console.log("O input perdeu o foco.");
+  var rg = $("#nr_rg_cpf").val();
+  $.ajax({
+    url: base_url + 'api/buscaRG/'+rg,
+    success: function(data){
+      console.log(data);
+      if(data.doador == null){
+        $("#nome_doador").val(data.nome_doador);
+        $("#telefone").val(data.telefone);
+        $("#email").val(data.email);
+        $("#id_doador").val(data.id_doador);
+      }
+    },
+    dataType: 'json'
+  });
 });
+
+$("#createDoador").on('submit',function (event) {
+  conosole.log($(event).serialize());
+  $.ajax({
+    type: "POST",
+    dataType: 'json',
+    url: base_url + "api/createDoador",
+    data: $(event).serialize(),
+    success: function(data){
+      console.log(data);
+    },
+    error: function(data) {
+    }
+  });
+
+  return false;
+})
