@@ -25,6 +25,14 @@ class Api extends MY_Controller {
   public function createDoador(){
     if($this->input->post()){
       $this->projetos->insertDoador();
+    } else {
+      $json = [
+        'status' => 'error',
+        'titulo' => 'Atenção',
+        'menssage' => 'Não houve um requisição post!',
+      ];
+      
+      echo json_encode($json);
     }
   }
   

@@ -6,6 +6,7 @@ $("#btnFinalizaDoacao").on('click', function(event){
       if (data.cart.total > 0) {
         $('#modalDoador').modal('show');
       } else {
+        $("#LabelMenssagem").text("Carrinho vazio para realizar doação!");
         $('#modalMensagem').modal('show');
       }
     },
@@ -56,11 +57,11 @@ $("#nr_rg_cpf").blur(function(){
     url: base_url + 'api/buscaRG/'+rg,
     success: function(data){
       console.log(data);
-      if(data.doador == null){
-        $("#nome_doador").val(data.nome_doador);
-        $("#telefone").val(data.telefone);
-        $("#email").val(data.email);
-        $("#id_doador").val(data.id_doador);
+      if(data.doador !== null){
+        $("#nome_doador").val(data.doador.nome_doador);
+        $("#telefone").val(data.doador.telefone);
+        $("#email").val(data.doador.email);
+        $("#id_doador").val(data.doador.id_doador);
       }
     },
     dataType: 'json'
@@ -68,18 +69,22 @@ $("#nr_rg_cpf").blur(function(){
 });
 
 $("#createDoador").on('submit',function (event) {
-  conosole.log($(event).serialize());
+  event.preventDefault();
+  console.log($(event.target).serialize());
   $.ajax({
     type: "POST",
     dataType: 'json',
-    url: base_url + "api/createDoador",
-    data: $(event).serialize(),
+    url: event.target.action,
+    data: $(event.target).serialize(),
     success: function(data){
       console.log(data);
+      $('#countCart').text("0");
+      $('#modalDoador').modal('hide');
+      $("#LabelMenssagem").text(data.menssage);
+      $('#modalMensagem').modal('show');
     },
     error: function(data) {
+      console.log(data);
     }
   });
-
-  return false;
 })

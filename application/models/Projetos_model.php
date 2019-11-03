@@ -125,7 +125,7 @@ class Projetos_model extends CI_Model {
   }
   
   public function finalizaDoacao($id_doador){
-    $carts = $this->getCart();
+    $carts = $this->getCarts();
     foreach($carts as $cart){
       $data = [
         'id_doador' => $id_doador,
@@ -144,7 +144,7 @@ class Projetos_model extends CI_Model {
   }
   
   public function insertDoador(){
-    if($this->input->post('id_doador') === null){
+    if(empty($this->input->post('id_doador'))){
       $data = [
         'nome_doador' => $this->input->post('nome_doador'),
         'nr_rg_cpf' => $this->input->post('nr_rg_cpf'),
@@ -162,7 +162,7 @@ class Projetos_model extends CI_Model {
     $json = [
       'status' => 'success',
       'titulo' => 'Sucesso',
-      'menssage' => 'Doação realizada com sucesso!',
+      'menssage' => 'Sua doação realizada com sucesso!',
     ];
     
     echo json_encode($json);
