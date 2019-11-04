@@ -16,8 +16,11 @@ class Admin extends MY_Controller {
 
 	public function index($slug = "")
 	{
-    if($this->session->userdata('projeto') !== null)
+    if($this->session->userdata('projeto') !== null){
+      $this->data['titulo'] = 'Selecionar Projeto';
+      //busca para colocar na grid
       $this->template->showLogged('dashboard/main/layout-main', $this->data);
+    }
     else
       redirect("admin/projetos");
 	}
@@ -92,6 +95,7 @@ class Admin extends MY_Controller {
       $this->session->set_userdata('projeto', $this->projetos->getProjetos($id));
       redirect("admin/");
     } else {
+      $this->data['titulo'] = 'Selecionar Projeto';
       $this->template->addScriptWebapp('js/projetos.js');
       $this->template->addCssWebapp('css/style/projetos.css');
       $this->template->showLogged('dashboard/main/layout-main', $this->data);
@@ -111,27 +115,37 @@ class Admin extends MY_Controller {
     $crud->setRelation('id_entidade','tbl_entidade','nome_fantasia');
     $crud->setRelation('id_beneficiado','tbl_beneficiado','nome_benef');
     
+    $crud->setActionButton('Itens', 'fa fa-user', function ($row) {
+        return base_url('/admin/movItem/' . $row->id_movimento);
+    }, true);
+
     $crud->unsetAdd();
     $crud->unsetEdit();
     $crud->unsetRead();
+    $crud->unsetDelete();
     $crud->setRead();
     
     $this->output($crud);
   }
   
-  public function movItem(){
+  public function movItem($where = ''){
     $this->data['titulo'] = 'Item da Movimentação';
     
 		$crud = $this->_getGroceryCrudEnterprise();
     $crud->setTable('tbl_movimento_item');
     $crud->setSubject($this->data['titulo'], '');
     
-    $crud->columns(['id_tipo_doacao','id_doador']);
+    $crud->columns(['id_movimento','id_tipo_doacao','id_doador']);
     $crud->displayAs(['id_tipo_doacao' => 'Tipo de Doação','id_doador' => 'Doador']);
     
     $crud->setRelation('id_doador','tbl_doador','nome_doador');
     $crud->setRelation('id_tipo_doacao','tbl_tipo_doacao','tipo');
     
+    $crud->unsetEdit();
+    $crud->unsetDelete();
+    
+    if(!empty($where))
+      $crud->where(['id_movimento' => $where]);
     $this->output($crud);
   }
   
