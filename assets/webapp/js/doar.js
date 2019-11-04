@@ -70,7 +70,6 @@ $("#nr_rg_cpf").blur(function(){
 
 $("#createDoador").on('submit',function (event) {
   event.preventDefault();
-  console.log($(event.target).serialize());
   $.ajax({
     type: "POST",
     dataType: 'json',
@@ -82,6 +81,15 @@ $("#createDoador").on('submit',function (event) {
       $('#modalDoador').modal('hide');
       $("#LabelMenssagem").text(data.menssage);
       $('#modalMensagem').modal('show');
+      $('input[type=checkbox]').each(function () {
+        $(this).prop('checked', false);
+      });
+      
+      $('#id_doador').val("");
+      $('#nome_doador').val("");
+      $('#email').val("");
+      $('#telefone').val("");
+      $('#nr_rg_cpf').val("");
     },
     error: function(data) {
       console.log(data);

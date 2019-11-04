@@ -26,3 +26,11 @@ function nome_projeto(){
 function is_set($array, $param){
   return isset($array[$param]) ? $array[$param] : "";
 }
+
+function isChecked($carts, $idMov, $idTipo){
+  foreach($carts as $cart){
+    if ($idMov == $cart->id_movimento && $cart->id_tipo_doacao == $idTipo){
+      return 'checked';
+    }
+  }
+}

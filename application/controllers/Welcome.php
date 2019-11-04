@@ -30,7 +30,9 @@ class Welcome extends MY_Controller {
 		$this->data['doar'] = $this->projetos->getPaginaCampos('doar');
 		$this->data['movimentos'] = $this->projetos->getMovimentos();
 		$this->data['tipos'] = $this->projetos->getTipoDoacao();
-    $this->data['countCart'] = count($this->projetos->getCarts());
+    $carts = $this->projetos->getCarts();
+    $this->data['carts'] = $carts;
+    $this->data['countCart'] = count($carts);
 		$this->template->show('pagina/doar', $this->data);
 	}
 }

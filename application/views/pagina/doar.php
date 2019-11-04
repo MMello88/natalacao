@@ -50,7 +50,7 @@
                         <p><smal> <?= $tipo->descricao ?> </smal></p>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input chkBtn" id="<?= 'chk_'.$key.$key1.$key2 ?>" 
-                            data-id_tipo_doacao="<?= $tipo->id_tipo_doacao ?>" data-id_movimento="<?= $benef->id_movimento ?>" name="tipo_doacao">
+                            data-id_tipo_doacao="<?= $tipo->id_tipo_doacao ?>" data-id_movimento="<?= $benef->id_movimento ?>" name="tipo_doacao" <?= isChecked($carts, $benef->id_movimento, $tipo->id_tipo_doacao) ?>>
                           <label class="custom-control-label" for="<?= 'chk_'.$key.$key1.$key2 ?>">Doar?</label>
                         </div>
                       </div>

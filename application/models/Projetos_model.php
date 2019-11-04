@@ -152,7 +152,9 @@ class Projetos_model extends CI_Model {
         'telefone' => $this->input->post('telefone')
       ];
       
-      $id = $this->db->insert('doador',$data);
+      $id = '';
+      if($this->db->insert('doador',$data))
+        $id = $this->db->insert_id();
     } else {
       $id = $this->input->post('id_doador');
     }
