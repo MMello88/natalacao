@@ -63,4 +63,13 @@ class Api extends MY_Controller {
   public function buscaRG($rg){
     $this->projetos->getDoadorPorRG($rg); 
   }
+  
+  public function getDoacao($rg){
+    $this->projetos->getDoacaoPorRG($rg);
+  }
+  
+  public function alteraSituacao(){
+    if($this->input->post())
+      $this->projetos->alteraSituacao();
+  }
 }

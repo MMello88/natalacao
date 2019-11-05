@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 73px;">
   <div class="container">
-    
+    <a class="btn btn-success mt-auto" id="btnConsultarDoacao" data-toggle="modal" href="#modalConsulta" >Consultar Doação</a>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <div class="dropdown">
           <span class="fa fa-cart-plus my-2" id="overCart" style="font-size: 25px;"
-            role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></span>
+            role="button" id="dropdownMenuLink" data-toggle="xxxdropdown" aria-haspopup="true" aria-expanded="true"></span>
           <span class="badge badge-warning mr-4" id="countCart"><?= $countCart ?></span>
 
 
@@ -85,7 +85,7 @@
         <div class="form-group">
           <input type="hidden" name="id_doador" id="id_doador">
           <label for="nr_rg_cpf" class="col-form-label">RG:</label>
-          <input type="text" class="form-control" name="nr_rg_cpf" id="nr_rg_cpf" required>
+          <input type="text" class="form-control rg" name="nr_rg_cpf" id="nr_rg_cpf" required>
         </div>
         <div class="form-group">
           <label for="nome_doador" class="col-form-label">Nome</label>
@@ -117,6 +117,44 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalConsulta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Consulte sua doação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-row align-items-end">
+          <div class="col-sm-6 my-1">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">RG</div>
+              </div>
+              <input type="text" class="form-control rg" name="nr_rg_cpf" id="rgConsulta" required>
+            </div>
+          </div>
+          <div class="col-auto my-1">
+            <button type="button" class="btn btn-primary" id="btnConsultar">Consultar</button>
+          </div>
+        </div>
+        <small id="msgErro" class="form-text text-muted"></small>
+        
+        <div class="mt-5" id="tabelaDoacao">
+         
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

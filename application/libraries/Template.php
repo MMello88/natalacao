@@ -59,6 +59,7 @@ class Template {
     array_push($this->data['arrJS'], base_url_webapp("js/componentes/bootstrap/jquery.min.js"));
     array_push($this->data['arrJS'], base_url_webapp("js/componentes/bootstrap/bootstrap.bundle.min.js"));
     array_push($this->data['arrJS'], base_url_webapp("js/componentes/bootstrap/bootstrap.min.js"));
+    array_push($this->data['arrJS'], base_url_webapp("js/componentes/masked/jquery.mask.js"));
     
     foreach($this->arrJSExt as $js)
       array_push($this->data['arrJS'], $js);

@@ -135,13 +135,12 @@ class Admin extends MY_Controller {
     $crud->setTable('tbl_movimento_item');
     $crud->setSubject($this->data['titulo'], '');
     
-    $crud->columns(['id_movimento','id_tipo_doacao','id_doador']);
-    $crud->displayAs(['id_tipo_doacao' => 'Tipo de Doação','id_doador' => 'Doador']);
+    $crud->columns(['id_movimento','id_tipo_doacao','id_doador', 'situacao']);
+    $crud->displayAs(['id_tipo_doacao' => 'Tipo de Doação','id_doador' => 'Doador', 'situacao' => 'Situação']);
     
     $crud->setRelation('id_doador','tbl_doador','nome_doador');
     $crud->setRelation('id_tipo_doacao','tbl_tipo_doacao','tipo');
     
-    $crud->unsetEdit();
     $crud->unsetDelete();
     
     if(!empty($where))

@@ -1,3 +1,7 @@
+$(document).ready(function(){
+  $('.rg').mask('00.000.000-0', {reverse: true});
+})
+
 $("#btnFinalizaDoacao").on('click', function(event){
   $.ajax({
     url: base_url + 'api/hasCarts',
@@ -13,14 +17,6 @@ $("#btnFinalizaDoacao").on('click', function(event){
     dataType: 'json'
   });
 })
-
-$('#overCart').on('mouseover', function(e){
-  $('#overCart').dropdown('show')
-})
-
-$("#overCart").mouseout(function(e){
-  $('#overCart').dropdown('hide')
-});
 
 $(".chkBtn").click(function(event){
   var chk = event.target.dataset
@@ -95,4 +91,53 @@ $("#createDoador").on('submit',function (event) {
       console.log(data);
     }
   });
+})
+
+$("#btnConsultar").on('click', function(event){
+  var rg = $("#rgConsulta").val()
+  $("#msgErro").text("")
+  $("#tabelaDoacao").html("");
+  if(rg == ''){
+    $("#msgErro").text("Informe o RG para a Consulta.")
+  } else if(rg.length < 12){
+    $("#msgErro").text("Tamanho do RG está errado.")
+  } else {
+    $.ajax({
+      url: base_url + 'api/getDoacao/'+rg,
+      success: function(data){
+        console.log(data);
+        if(data.status == 'warning'){
+          $("#msgErro").text(data.menssage)
+        } else {
+          $("#tabelaDoacao").html(data.grid)
+        }
+      },
+      error: function(data) {
+        console.log(data);
+      },
+      dataType: 'json'
+    });
+  }
+})
+
+ $(document).on("click","#chkCancelar",function(event) {
+
+  console.log(event)
+  var ds = event.target.dataset
+  var situacao
+  if (event.target.checked == false) situacao = 'Aberto'
+  else situacao = 'Cancelado'
+  
+  $.ajax({
+    type: "POST",
+    url: base_url + "api/alteraSituacao",
+    data: {'id_movimento_item': ds.id_movimento_item, 'situacao': situacao},
+    success: function(data){
+      console.log(data);
+    },
+    error: function(data){
+      console.log(data);
+    }
+  });
+
 })

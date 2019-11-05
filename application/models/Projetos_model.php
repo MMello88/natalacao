@@ -164,7 +164,7 @@ class Projetos_model extends CI_Model {
     $json = [
       'status' => 'success',
       'titulo' => 'Sucesso',
-      'menssage' => 'Sua doação realizada com sucesso!',
+      'menssage' => 'Sua doação foi realizada com sucesso!',
     ];
     
     echo json_encode($json);
@@ -180,5 +180,63 @@ class Projetos_model extends CI_Model {
     ];
     
     echo json_encode($json);
+  }
+  
+  public function getDoacaoPorRG($nr_rg_cpf){
+    $q = "SELECT e.nome_entidade, b.nome_benef, t.descricao, i.id_movimento_item
+            FROM tbl_movimento_item i
+           INNER JOIN tbl_movimento m   ON m.id_movimento = i.id_movimento
+           INNER JOIN tbl_tipo_doacao t ON t.id_tipo_doacao = i.id_tipo_doacao
+           INNER JOIN tbl_doador d      ON d.id_doador = i.id_doador
+           INNER JOIN tbl_beneficiado b ON b.id_beneficiado = m.id_beneficiado
+           INNER JOIN tbl_entidade e    ON e.id_entidade = m.id_entidade
+           WHERE d.nr_rg_cpf = '$nr_rg_cpf'
+             AND i.situacao = 'Aberto'";
+    $rows = $this->db->query($q)->result();
+    
+    if(!empty($rows)){
+      $data = " 
+        <table class='table table-sm'>
+          <thead>
+            <tr>
+              <th scope='col'>Entidade</th>
+              <th scope='col'>Benefeciário</th>
+              <th scope='col'>Tipo Doação</th>
+              <th scope='col'>Cancelar</th>
+            </tr>
+          </thead>
+          <tbody>";
+      foreach($rows as $row){
+        $data .= 
+        "<tr>
+          <td>{$row->nome_entidade}</td>
+          <td>{$row->nome_benef}</td>
+          <td>{$row->descricao}</td>
+          <td><input type='checkbox' id='chkCancelar' data-id_movimento_item='{$row->id_movimento_item}'></td>
+        </tr>";
+      }
+      $data .= "</tbody>
+        </table>";
+      $json = [
+        'status'   => 'success',
+        'titulo'   => 'Sucesso',
+        'menssage' => 'Doações!',
+        'grid'   => $data
+      ];
+    } else {
+      $json = [
+        'status'   => 'warning',
+        'titulo'   => 'Doações',
+        'menssage' => 'Doações não foi encontrado para este RG.'
+      ];
+    }
+    
+    echo json_encode($json);
+  }
+  
+  public function alteraSituacao(){
+    $where = ['id_movimento_item' => $this->input->post('id_movimento_item')];
+    $data = ['situacao' => $this->input->post('situacao')];
+    $this->db->update('movimento_item', $data, $where);
   }
 }
